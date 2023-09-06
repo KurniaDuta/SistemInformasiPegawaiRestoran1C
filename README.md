@@ -12,4 +12,4 @@ Kontributor
 1. Duta Kurnia Ardhani
 2. Nakita Gayuh Cakrawala
 3. Pramudya Surya Anggara Putra 
-4. Rensi Meila Yulfinata
+4. Rensi Meila Yulvinata
