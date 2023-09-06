@@ -1,6 +1,10 @@
 # Sistem Informasi Pegawai Restoran 1-C
 
-Beberapa fitur-fitur yang akan dikerjakan :
+  Sistem informasi pegawai restoran adalah sistem yang digunakan untuk mengelola dan memfasilitasi aktivitas operasional pada restoran, seperti pengelolaan pesanan, manajemen stok, manajemen inventaris, pelaporan dan manajemen keuangan. Sistem ini bertujuan untuk meningkatkan produktivitas dan efisiensi restoran, serta mempermudah pengambilan keputusan dengan lebih baik.
+
+  Selain itu, sistem informasi pegawai restoran juga membantu dalam manajemen sumber daya manusia pada restoran, seperti merekrut staf, membuat deskripsi pekerjaan yang realistis, membuat profil pekerja yang ideal, dan memulai rekrutmen calon potensia
+
+Adapun beberapa fitur-fitur yang akan dikerjakan :
 
 1. Lihat Data pegawai  
 3. Menambah pegawai
