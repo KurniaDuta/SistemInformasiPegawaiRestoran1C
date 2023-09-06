@@ -6,7 +6,7 @@
 
 Adapun beberapa fitur-fitur yang akan dikerjakan bersama dengan tim kami, adalah :
 
-1. Mengobservasi data pegawai  
+1. Lihat data pegawai  
 3. Menambah pegawai
 4. Mengubah data pegawai
 5. Menghapus pegawai
