@@ -8,7 +8,7 @@ Beberapa fitur-fitur yang akan dikerjakan :
 5. Menghapus pegawai
 6. Intensif pegawai
 
-Kontributor :
+# Kontributor :
 
 1. Duta Kurnia Ardhani
 2. Nakita Gayuh Cakrawala
