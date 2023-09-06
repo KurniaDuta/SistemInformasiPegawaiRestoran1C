@@ -1,13 +1,14 @@
 # Sistem Informasi Pegawai Restoran 1C
 
-Fitur fitur yang akan dikerjakan 
+Beberapa fitur-fitur yang akan dikerjakan :
 
-1. Lihat Data Pegawai  
-3. Menambah Pegawai
+1. Lihat Data pegawai  
+3. Menambah pegawai
 4. Mengubah data pegawai
 5. Menghapus pegawai
+6. Intensif pegawai
 
-Kontributor 
+Kontributor :
 
 1. Duta Kurnia Ardhani
 2. Nakita Gayuh Cakrawala
