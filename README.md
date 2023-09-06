@@ -2,10 +2,10 @@
 
 Fitur fitur yang akan dikerjakan 
 
-1. Melihat data pegawai  
-2. Menambah Pegawai
-3. Mengubah data pegawai
-4. Menghapus pegawai
+1. Lihat Data Pegawai  
+3. Menambah Pegawai
+4. Mengubah data pegawai
+5. Menghapus pegawai
 
 Kontributor 
 
