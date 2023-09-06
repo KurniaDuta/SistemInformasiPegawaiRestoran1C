@@ -1,4 +1,4 @@
-# Sistem Informasi Pegawai Restoran 1C
+# Sistem Informasi Pegawai Restoran 1-C
 
 Beberapa fitur-fitur yang akan dikerjakan :
 
