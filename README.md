@@ -4,9 +4,9 @@
 
   Selain itu, sistem informasi pegawai restoran juga membantu dalam manajemen sumber daya manusia pada restoran, seperti merekrut staf, membuat deskripsi pekerjaan yang realistis, membuat profil pekerja yang ideal, dan memulai rekrutmen calon potensia
 
-Adapun beberapa fitur-fitur yang akan dikerjakan :
+Adapun beberapa fitur-fitur yang akan dikerjakan bersama dengan tim kami, adalah :
 
-1. Lihat Data pegawai  
+1. Mengobservasi data pegawai  
 3. Menambah pegawai
 4. Mengubah data pegawai
 5. Menghapus pegawai
