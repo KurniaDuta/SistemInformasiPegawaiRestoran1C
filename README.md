@@ -13,6 +13,7 @@ Adapun beberapa fitur-fitur yang akan dikerjakan bersama dengan tim kami, adalah
 6. Intensif pegawai
 
 # Kontributor :
+Berikut adalah beberapa anggota tim kelompok kami yang terdiri dari :
 
 1. Duta Kurnia Ardhani
 2. Nakita Gayuh Cakrawala
