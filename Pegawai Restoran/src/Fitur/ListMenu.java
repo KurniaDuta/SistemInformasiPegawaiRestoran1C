@@ -16,9 +16,14 @@ public class ListMenu {
         System.out.println("4. Hapus Data Karyawan");
         System.out.println("5. Sistem Gaji");
         System.out.println("=========================================");
+        System.out.println("   Pilih menu yang anda inginkan (1-5) : ");
 
-        System.out.println("  Pilih menu yang anda inginkan (1-5) : ");
         int pilih = p1.nextInt();
+        System.out.println("=========================================");
+        System.out.println("       Menu yang dipilih nomor: " + pilih);
+        System.out.println("=========================================");
+
+
         
     }
 }
