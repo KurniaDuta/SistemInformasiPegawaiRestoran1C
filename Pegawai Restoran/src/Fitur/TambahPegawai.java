@@ -12,7 +12,7 @@ public static void main(String[] args) {
     System.out.println("****Menu Menambah Data Pegawai****");
     
     System.out.println("\nMasukkan nama pegawai : ");
-    pegawai = pg.next();
+    pegawai = pg.nextLine();
    
     System.out.println("Pilih Role : ");
     System.out.println("1. Role 1");
@@ -22,12 +22,12 @@ public static void main(String[] args) {
     role = rl.nextInt();
    
     System.out.println("Masukkan Domisili pegawai : ");
-    domisili = pg.next();
+    domisili = pg.nextLine();
    
     System.out.println("Masukkan Riwayat Pendidikan : ");
-    pendidikan = pg.next();
+    pendidikan = pg.nextLine();
     System.out.println("Masukkan Riwayat Penyakit : ");
-    penyakit = pg.next();
+    penyakit = pg.nextLine();
 
     System.out.println("Nama Pegawai        : " +pegawai);
     System.out.println("Role                : " +role);
@@ -40,5 +40,4 @@ public static void main(String[] args) {
     System.out.println("\nKembali ke menu awal? (y/n)");
     awal = mn.next().charAt(0);
 }
-    
 }
