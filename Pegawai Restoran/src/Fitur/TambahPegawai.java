@@ -29,11 +29,13 @@ public static void main(String[] args) {
     System.out.println("Masukkan Riwayat Penyakit : ");
     penyakit = pg.nextLine();
 
-    System.out.println("Nama Pegawai        : " +pegawai);
-    System.out.println("Role                : " +role);
-    System.out.println("Domisili            : " +domisili);
-    System.out.println("Riwayat Pendidikan  : " +pendidikan);
-    System.out.println("Riwayat penyakit    : " +penyakit);
+    System.out.println("================================");
+    System.out.println("| Nama Pegawai        : " +pegawai);
+    System.out.println("| Role                : " +role);
+    System.out.println("| Domisili            : " +domisili);
+    System.out.println("| Riwayat Pendidikan  : " +pendidikan);
+    System.out.println("| Riwayat penyakit    : " +penyakit);
+    System.out.println("================================");
     
     System.out.println("\n***Data telah ditambahkan***");
 
