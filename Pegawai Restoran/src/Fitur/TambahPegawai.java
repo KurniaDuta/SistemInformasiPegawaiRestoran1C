@@ -6,20 +6,20 @@ public static void main(String[] args) {
     Scanner rl = new Scanner(System.in);
     Scanner mn = new Scanner(System.in);
     
-    String pegawai, domisili, pendidikan, penyakit;
-    char awal;
-    int role;
+    String namaPegawai, domisili, pendidikan, penyakit;
+    char back;
+    int pilihRole;
     System.out.println("****Menu Menambah Data Pegawai****");
     
     System.out.println("\nMasukkan nama pegawai : ");
-    pegawai = pg.nextLine();
+    namaPegawai = pg.nextLine();
    
     System.out.println("\nPilih Role : ");
     System.out.println("1. Role 1");
     System.out.println("2. Role 2");
     System.out.println("3. Role 3");
     System.out.println("4. Role 4");
-    role = rl.nextInt();
+    pilihRole = rl.nextInt();
    
     System.out.println("\nMasukkan Domisili pegawai : ");
     domisili = pg.nextLine();
@@ -30,8 +30,8 @@ public static void main(String[] args) {
     penyakit = pg.nextLine();
 
     System.out.println("================================");
-    System.out.println("| Nama Pegawai        : " +pegawai);
-    System.out.println("| Role                : " +role);
+    System.out.println("| Nama Pegawai        : " +namaPegawai);
+    System.out.println("| Role                : " +pilihRole);
     System.out.println("| Domisili            : " +domisili);
     System.out.println("| Riwayat Pendidikan  : " +pendidikan);
     System.out.println("| Riwayat penyakit    : " +penyakit);
@@ -40,6 +40,6 @@ public static void main(String[] args) {
     System.out.println("\n***Data telah ditambahkan***");
 
     System.out.println("\nKembali ke menu awal? (y/n)");
-    awal = mn.next().charAt(0);
+    back = mn.next().charAt(0);
 }
 }

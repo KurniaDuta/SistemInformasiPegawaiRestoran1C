@@ -17,9 +17,9 @@ public class ListMenu {
         System.out.println("=========================================");
         System.out.println("   Pilih menu yang anda inginkan (1-5) : ");
 
-        int pilih = p1.nextInt();
+        int pilihMenu = p1.nextInt();
         System.out.println("=========================================");
-        System.out.println("       Menu yang dipilih nomor: " + pilih);
+        System.out.println("       Menu yang dipilih nomor: " + pilihMenu);
         System.out.println("=========================================");
 
 

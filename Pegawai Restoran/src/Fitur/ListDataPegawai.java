@@ -4,7 +4,7 @@ public class ListDataPegawai {
 
     public static void main(String[] args) {
         Scanner mn = new Scanner(System.in);
-        char awal;
+        char back;
 
         System.out.println("***** Menu List Data Pegawai *****\n");
         System.out.println("====================================================================================================================");
@@ -17,7 +17,7 @@ public class ListDataPegawai {
 
 
         System.out.println("\nKembali ke menu awal? (y/n)");
-        awal = mn.next().charAt(0);
+        back = mn.next().charAt(0);
 
     }
 }
