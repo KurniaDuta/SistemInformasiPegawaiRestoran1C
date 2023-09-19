@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 public class TambahPegawai {
 public static void main(String[] args) {
+    while (true) {
+    
     Scanner pg = new Scanner(System.in);
     Scanner rl = new Scanner(System.in);
     Scanner mn = new Scanner(System.in);
     
-    String namaPegawai, domisili, pendidikan, penyakit;
+    String namaPegawai, domisili, pendidikan, penyakit, role="";
     char back;
     int pilihRole;
     System.out.println("****Menu Menambah Data Pegawai****");
@@ -21,6 +23,23 @@ public static void main(String[] args) {
     System.out.println("4. Role 4");
     pilihRole = rl.nextInt();
    
+ switch (pilihRole) {
+        case 1:
+           role = "Role 1";
+            break;
+        case 2:
+           role = "Role 2";
+            break;
+        case 3:
+           role = "Role 3";
+            break;
+        case 4:
+           role = "Role 4";
+            break;   
+        default:
+            break;
+    }
+
     System.out.println("\nMasukkan Domisili pegawai : ");
     domisili = pg.nextLine();
    
@@ -28,10 +47,10 @@ public static void main(String[] args) {
     pendidikan = pg.nextLine();
     System.out.println("\nMasukkan Riwayat Penyakit : ");
     penyakit = pg.nextLine();
-
+    
     System.out.println("================================");
     System.out.println("| Nama Pegawai        : " +namaPegawai);
-    System.out.println("| Role                : " +pilihRole);
+    System.out.println("| Role                : " +role);
     System.out.println("| Domisili            : " +domisili);
     System.out.println("| Riwayat Pendidikan  : " +pendidikan);
     System.out.println("| Riwayat penyakit    : " +penyakit);
@@ -41,5 +60,11 @@ public static void main(String[] args) {
 
     System.out.println("\nKembali ke menu awal? (y/n)");
     back = mn.next().charAt(0);
+     if (back=='y') {
+        System.out.println("Kembali ke menu"); break;
+    } else {
+        continue;
+    }
+}
 }
 }
