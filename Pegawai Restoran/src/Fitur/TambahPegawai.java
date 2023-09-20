@@ -32,7 +32,7 @@ public class TambahPegawai {
 
         System.out.println("================================");
         System.out.println("| Nama Pegawai        : " + namaPegawai);
-        System.out.println("| Role                : " + pilihRolerole);
+        System.out.println("| Role                : " + pilihRole);
         System.out.println("| Domisili            : " + domisili);
         System.out.println("| Riwayat Pendidikan  : " + pendidikan);
         System.out.println("| Riwayat penyakit    : " + penyakit);
