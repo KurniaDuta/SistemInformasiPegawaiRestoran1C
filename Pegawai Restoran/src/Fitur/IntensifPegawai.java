@@ -7,7 +7,7 @@ public class IntensifPegawai {
         Scanner number = new Scanner(System.in);
 
         String namaPegawai;
-        int gajiAwal = 4000000, jumlahIzin, nominalIzin = 100000, gajiAkhir, potIzin, intensifLembur = 25000, lembur,
+        int gajiAwal = 4000000, jumlahIzin, nominalIzin = 100000, gajiAkhir, potIzin, intensifLembur = 25000, jmlLembur,
                 gajiLembur, shiftMasuk;
 
         System.out.println("======================================");
@@ -18,10 +18,10 @@ public class IntensifPegawai {
         System.out.print("Masukkan jumlah izin (shift) : ");
         jumlahIzin = number.nextInt();
         System.out.print("Masukkan jumlah lembur (jam): ");
-        lembur = number.nextInt();
+        jmlLembur = number.nextInt();
 
         potIzin = jumlahIzin * nominalIzin;
-        gajiLembur = lembur * intensifLembur;
+        gajiLembur = jmlLembur * intensifLembur;
         gajiAkhir = gajiAwal - potIzin + gajiLembur;
         shiftMasuk = 30 - jumlahIzin;
 
@@ -31,7 +31,7 @@ public class IntensifPegawai {
         System.out.println("Nama Pegawai\t: " + namaPegawai);
         System.out.println("Shift Masuk\t: " + shiftMasuk + " shift");
         System.out.println("Shift Izin\t: " + jumlahIzin + " shift");
-        System.out.println("Lembur\t\t: " + lembur + " jam\n");
+        System.out.println("Lembur\t\t: " + jmlLembur + " jam\n");
         System.out.println("==============================================================\n");
         System.out.println("Gaji Pokok\t: " + gajiAwal);
         System.out.println("Potongan izin\t: " + potIzin);
