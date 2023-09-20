@@ -19,11 +19,12 @@ public class IntensifPegawai {
         jumlahIzin = number.nextInt();
         System.out.print("Masukkan jumlah lembur (jam): ");
         jmlLembur = number.nextInt();
-
+        
+        shiftMasuk = 30 - jumlahIzin;
         potIzin = jumlahIzin * nominalIzin;
         gajiLembur = jmlLembur * intensifLembur;
         gajiAkhir = gajiAwal - potIzin + gajiLembur;
-        shiftMasuk = 30 - jumlahIzin;
+        
 
         System.out.println("\n\n\n==============================================================");
         System.out.println("                 Slip Gaji Pegawai Restoran 1C                ");
