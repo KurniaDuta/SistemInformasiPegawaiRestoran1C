@@ -7,7 +7,7 @@ public class IntensifPegawai {
         Scanner number = new Scanner(System.in);
 
         String namaPegawai;
-        int gajiAwal = 4000000, jumlahIzin, nominalIzin = 100000, gajiAkhir, potIzin, intensifPegawai = 25000, lembur,
+        int gajiAwal = 4000000, jumlahIzin, nominalIzin = 100000, gajiAkhir, potIzin, intensifLembur = 25000, lembur,
                 gajiLembur, shiftMasuk;
 
         System.out.println("======================================");
@@ -21,7 +21,7 @@ public class IntensifPegawai {
         lembur = number.nextInt();
 
         potIzin = jumlahIzin * nominalIzin;
-        gajiLembur = lembur * intensifPegawai;
+        gajiLembur = lembur * intensifLembur;
         gajiAkhir = gajiAwal - potIzin + gajiLembur;
         shiftMasuk = 30 - jumlahIzin;
 
