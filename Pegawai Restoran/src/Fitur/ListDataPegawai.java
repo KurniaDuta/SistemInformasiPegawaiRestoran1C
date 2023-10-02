@@ -4,7 +4,6 @@ public class ListDataPegawai {
 
     public static void main(String[] args) {
         Scanner mn = new Scanner(System.in);
-        char back;
 
         System.out.println("***** Menu List Data Pegawai *****\n");
         System.out.println("====================================================================================================================");
@@ -16,20 +15,15 @@ public class ListDataPegawai {
         System.out.println("====================================================================================================================");
 
 
-        System.out.println("\nKembali ke menu awal? (y/n)");
+        char back;
+        
+        System.out.print("Kembali ke menu (y/n)");
         back = mn.next().charAt(0);
-
-        String ketikY = "y";
-        String ketikN = "n";
         
-        System.out.println("Kembali ke menu (y/n)");
-        String enteredketikY = mn.nextLine();
-        String enteredketikN = mn.nextLine();
-        
-        if (enteredketikY.equals(enteredketikY)) {
-            System.out.println("List Menu");
-        } else if (enteredketikN.equals(enteredketikN)) {
-            System.out.println("Tetap pada menu");
+        if (back == 'y' || back == 'Y') {
+            System.out.print("List Menu");
+        } else if (back == 'n' || back == 'N') {
+            System.out.print("Tetap pada menu");
             
         }
     }
