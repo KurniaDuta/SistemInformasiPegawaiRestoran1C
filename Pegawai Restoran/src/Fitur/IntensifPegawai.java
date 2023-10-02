@@ -7,6 +7,7 @@ public class IntensifPegawai {
         Scanner number = new Scanner(System.in);
 
         String namaPegawai;
+        char back;
         int gajiAwal = 4000000, jumlahIzin, nominalIzin = 100000, gajiAkhir, potIzin, intensifLembur = 25000, jmlLembur,
                 gajiLembur, shiftMasuk;
 
@@ -19,12 +20,11 @@ public class IntensifPegawai {
         jumlahIzin = number.nextInt();
         System.out.print("Masukkan jumlah lembur (jam): ");
         jmlLembur = number.nextInt();
-        
+
         shiftMasuk = 30 - jumlahIzin;
         potIzin = jumlahIzin * nominalIzin;
         gajiLembur = jmlLembur * intensifLembur;
         gajiAkhir = gajiAwal - potIzin + gajiLembur;
-        
 
         System.out.println("\n\n\n==============================================================");
         System.out.println("                 Slip Gaji Pegawai Restoran 1C                ");
@@ -40,5 +40,16 @@ public class IntensifPegawai {
         System.out.println("==============================================================\n");
         System.out.println("Total Gaji Akhir: " + "Rp " + gajiAkhir + "\n");
         System.out.println("==============================================================");
+
+        System.out.print("Apakah anda ingin kembali ke menu? (Y/N): ");
+        back = kata.next().charAt(0);
+
+        if (back == 'y' || back == 'Y') {
+            System.out.println("Kembali ke list menu");
+        } else if (back == 'n' || back == 'N') {
+            System.out.println("Tetap pada menu");
+        } else {
+            System.out.println("Input yang anda masukkan tidak sesuai!");
+        }
     }
 }
