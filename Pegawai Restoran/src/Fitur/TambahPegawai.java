@@ -8,7 +8,7 @@ public class TambahPegawai {
         Scanner mn = new Scanner(System.in);
 
         String namaPegawai, domisili, pendidikan, penyakit, role = "";
-        char back;
+        char back = 'y';
         int pilihRole;
         System.out.println("****Menu Menambah Data Pegawai****");
 
@@ -30,9 +30,27 @@ public class TambahPegawai {
         System.out.println("\nMasukkan Riwayat Penyakit : ");
         penyakit = pg.nextLine();
 
+        switch (pilihRole) {
+            case 1:
+                role = "Role 1";
+                break;
+            case 2:
+                role = "Role 2";
+                break;
+            case 3:
+                role = "Role 3";
+                break;
+            case 4:
+                role = "Role 4";
+                break;
+            default:
+                role = "Role Invalid";
+                break;
+        }
+
         System.out.println("================================");
         System.out.println("| Nama Pegawai        : " + namaPegawai);
-        System.out.println("| Role                : " + pilihRole);
+        System.out.println("| Role                : " + role);
         System.out.println("| Domisili            : " + domisili);
         System.out.println("| Riwayat Pendidikan  : " + pendidikan);
         System.out.println("| Riwayat penyakit    : " + penyakit);
@@ -42,6 +60,11 @@ public class TambahPegawai {
 
         System.out.println("\nKembali ke menu awal? (y/n)");
         back = mn.next().charAt(0);
+        if (back == 'y'|| back == 'Y') {
+            System.out.println("Kembali ke menu");
+        } else {
+            System.out.println("Balik atas");
+        }
 
     }
 }
