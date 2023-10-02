@@ -19,5 +19,18 @@ public class ListDataPegawai {
         System.out.println("\nKembali ke menu awal? (y/n)");
         back = mn.next().charAt(0);
 
+        String ketikY = "y";
+        String ketikN = "n";
+        
+        System.out.println("Kembali ke menu (y/n)");
+        String enteredketikY = mn.nextLine();
+        String enteredketikN = mn.nextLine();
+        
+        if (enteredketikY.equals(enteredketikY)) {
+            System.out.println("List Menu");
+        } else if (enteredketikN.equals(enteredketikN)) {
+            System.out.println("Tetap pada menu");
+            
+        }
     }
 }
