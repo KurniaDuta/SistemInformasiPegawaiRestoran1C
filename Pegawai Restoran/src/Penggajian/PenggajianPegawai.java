@@ -43,10 +43,22 @@ public class PenggajianPegawai {
             pilihMenu = inputNum.next().charAt(0);
             switch (pilihMenu) {
                 case '1':
-                    System.out.println("\n***** Menu List Data Pegawai *****");
-                    System.out.println("=========================================");
-                    System.out.println("\t    Work In Progress");
-                    System.out.println("=========================================");
+                    // Data Pegawai
+                    System.out.println("***** Menu List Data Pegawai *****\n");
+                    System.out.println(
+                            "====================================================================================================================");
+                    System.out.println(
+                            "| Pegawai Satu\t|\tRole\t|\tDomisili\t|\tRiwayat Penyakit\t|\tRiwayat Pendidikan |");
+                    System.out.println(
+                            "| Pegawai Dua\t|\tRole\t|\tDomisili\t|\tRiwayat Penyakit\t|\tRiwayat Pendidikan |");
+                    System.out.println(
+                            "| Pegawai Tiga\t|\tRole\t|\tDomisili\t|\tRiwayat Penyakit\t|\tRiwayat Pendidikan |");
+                    System.out.println(
+                            "| Pegawai Empat\t|\tRole\t|\tDomisili\t|\tRiwayat Penyakit\t|\tRiwayat Pendidikan |");
+                    System.out.println(
+                            "| Pegawai Lima\t|\tRole\t|\tDomisili\t|\tRiwayat Penyakit\t|\tRiwayat Pendidikan |");
+                    System.out.println(
+                            "====================================================================================================================");
                     break;
                 case '2':
 
