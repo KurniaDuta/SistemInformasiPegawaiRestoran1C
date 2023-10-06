@@ -50,7 +50,7 @@ public class PenggajianPegawai {
                     break;
                 case '2':
 
-                //Tambah Data
+                    // Tambah Data
                     System.out.println("****Menu Menambah Data Pegawai****");
 
                     System.out.println("\nMasukkan nama pegawai : ");
@@ -113,10 +113,38 @@ public class PenggajianPegawai {
                     System.out.println("=========================================");
                     break;
                 case '5':
-                    System.out.println("\n***** Penggajian Pegawai *****");
-                    System.out.println("=========================================");
-                    System.out.println("\t    Work In Progress");
-                    System.out.println("=========================================");
+
+                    // Penggajian Pegawai
+                    System.out.println("======================================");
+                    System.out.println("          Penggajian Pegawai         ");
+                    System.out.println("======================================");
+                    System.out.print("Masukkan Nama Pegawai: ");
+                    namaPegawai = inputText.nextLine();
+                    System.out.print("Masukkan jumlah izin (shift) : ");
+                    jmlIzin = inputNum.nextInt();
+                    System.out.print("Masukkan jumlah lembur (jam): ");
+                    jmlLembur = inputNum.nextInt();
+
+                    shiftMasuk = 30 - jmlIzin;
+                    potIzin = jmlIzin * nominalIzin;
+                    gajiLembur = jmlLembur * intensifLembur;
+                    gajiAkhir = gajiPokok - potIzin + gajiLembur;
+
+                    System.out.println("\n\n\n==============================================================");
+                    System.out.println("                 Slip Gaji Pegawai Restoran 1C                ");
+                    System.out.println("==============================================================\n");
+                    System.out.println("Nama Pegawai\t: " + namaPegawai);
+                    System.out.println("Shift Masuk\t: " + shiftMasuk + " shift");
+                    System.out.println("Shift Izin\t: " + jmlIzin + " shift");
+                    System.out.println("Lembur\t\t: " + jmlLembur + " jam\n");
+                    System.out.println("==============================================================\n");
+                    System.out.println("Gaji Pokok\t: " + gajiPokok);
+                    System.out.println("Potongan izin\t: " + potIzin);
+                    System.out.println("Gaji Lembur\t: " + gajiLembur + "\n");
+                    System.out.println("==============================================================\n");
+                    System.out.println("Total Gaji Akhir: " + "Rp " + gajiAkhir + "\n");
+                    System.out.println("==============================================================");
+
                     break;
                 default:
                     System.out.println("\nMenu yang anda pilih tidak ditemukan! Mohon re-run codingan anda");
