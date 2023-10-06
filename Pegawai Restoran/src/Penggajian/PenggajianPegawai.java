@@ -30,13 +30,13 @@ public class PenggajianPegawai {
 
             // List Menu
             System.out.println("=========================================");
-            System.out.println("           MENU SISTEM KARYAWAN          ");
+            System.out.println("           MENU SISTEM PEGAWAI          ");
             System.out.println("=========================================");
-            System.out.println("1. List Data Karyawan");
-            System.out.println("2. Tambah Data Karyawan");
-            System.out.println("3. Ubah Data Karyawan");
-            System.out.println("4. Hapus Data Karyawan");
-            System.out.println("5. Sistem Gaji");
+            System.out.println("1. List Data Pegawai");
+            System.out.println("2. Tambah Data Pegawai");
+            System.out.println("3. Ubah Data Pegawai");
+            System.out.println("4. Hapus Data Pegawai");
+            System.out.println("5. Penggajian Pegawai");
             System.out.println("=========================================");
             System.out.print("   Pilih menu yang anda inginkan (1-5) : ");
 
@@ -49,6 +49,8 @@ public class PenggajianPegawai {
                     System.out.println("=========================================");
                     break;
                 case '2':
+
+                //Tambah Data
                     System.out.println("****Menu Menambah Data Pegawai****");
 
                     System.out.println("\nMasukkan nama pegawai : ");
@@ -105,13 +107,13 @@ public class PenggajianPegawai {
                     System.out.println("=========================================");
                     break;
                 case '4':
-                    System.out.println("\n***** Menu Hapus Data Karyawan ****");
+                    System.out.println("\n***** Menu Hapus Data Pegawai ****");
                     System.out.println("=========================================");
                     System.out.println("\t    Work In Progress");
                     System.out.println("=========================================");
                     break;
                 case '5':
-                    System.out.println("\n***** Menu Sistem Gaji *****");
+                    System.out.println("\n***** Penggajian Pegawai *****");
                     System.out.println("=========================================");
                     System.out.println("\t    Work In Progress");
                     System.out.println("=========================================");
