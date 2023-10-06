@@ -17,7 +17,18 @@ public class PenggajianPegawai {
                 gajiLembur, shiftMasuk;
 
         // Login
-        
+        System.out.println(
+                "================================== Sistem Pegawai Restoran 1C =================================");
+        System.out.print("\t\t\t        Enter username: ");
+        String enteredUsername = inputText.nextLine();
 
+        System.out.print("\t\t\t        Enter password: ");
+        String enteredPassword = inputText.nextLine();
+
+        if (enteredUsername.equals(username) && enteredPassword.equals(password)) {
+            System.out.println("\n\t\t\t      Welcome to Sistem Pegawai, " + username + "!");
+        } else {
+            System.out.println("\n\t\t\t  Maaf, username atau password anda salah!");
+        }
     }
 }
