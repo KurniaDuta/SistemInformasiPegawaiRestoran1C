@@ -171,7 +171,7 @@ public class PenggajianPegawai {
                     System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
                     back = inputNum.next().charAt(0);
                 } while (back == 'y' || back == 'Y');
-                
+                break;
             } else {
                 System.out.println("\n\t\t\t  Login Gagal. " + (3 - attempt) + " kali percobaan lagi");
                 if (attempt == 3) {
