@@ -70,7 +70,7 @@ public class PenggajianPegawai {
                         case '2':
 
                             // Tambah Data
-                            char menu2;
+                            char tambahPegawai;
                             do {
                                 System.out.println("Menu Menambah Data Pegawai");
 
@@ -120,8 +120,8 @@ public class PenggajianPegawai {
 
                                 System.out.println("\nData telah ditambahkan");
                                 System.out.print("Apakah anda ingin menambakan data lagi (y/t)");
-                                menu2 = inputNum.next().charAt(0);
-                            } while (menu2 == 'y' || menu2 == 'Y');
+                                tambahPegawai = inputNum.next().charAt(0);
+                            } while (tambahPegawai == 'y' || tambahPegawai == 'Y');
                             break;
                         case '3':
                             System.out.println("\n***** Menu Ubah Data Pegawai *****");
