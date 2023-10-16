@@ -70,54 +70,58 @@ public class PenggajianPegawai {
                         case '2':
 
                             // Tambah Data
-                            System.out.println("****Menu Menambah Data Pegawai****");
+                            char menu2;
+                            do {
+                                System.out.println("Menu Menambah Data Pegawai");
 
-                            System.out.println("\nMasukkan nama pegawai : ");
-                            namaPegawai = inputText.nextLine();
+                                System.out.println("\nMasukkan nama pegawai : ");
+                                namaPegawai = inputText.nextLine();
 
-                            System.out.println("\nPilih Role : ");
-                            System.out.println("1. Role 1");
-                            System.out.println("2. Role 2");
-                            System.out.println("3. Role 3");
-                            System.out.println("4. Role 4");
-                            pilihRole = inputNum.nextInt();
+                                System.out.println("\nPilih Role : ");
+                                System.out.println("1. Role 1");
+                                System.out.println("2. Role 2");
+                                System.out.println("3. Role 3");
+                                System.out.println("4. Role 4");
+                                pilihRole = inputNum.nextInt();
 
-                            System.out.println("\nMasukkan Domisili pegawai : ");
-                            domisili = inputText.nextLine();
+                                System.out.println("\nMasukkan Domisili pegawai : ");
+                                domisili = inputText.nextLine();
 
-                            System.out.println("\nMasukkan Riwayat Pendidikan : ");
-                            pendidikan = inputText.nextLine();
-                            System.out.println("\nMasukkan Riwayat Penyakit : ");
-                            penyakit = inputText.nextLine();
+                                System.out.println("\nMasukkan Riwayat Pendidikan : ");
+                                pendidikan = inputText.nextLine();
+                                System.out.println("\nMasukkan Riwayat Penyakit : ");
+                                penyakit = inputText.nextLine();
 
-                            switch (pilihRole) {
-                                case 1:
-                                    role = "Role 1";
-                                    break;
-                                case 2:
-                                    role = "Role 2";
-                                    break;
-                                case 3:
-                                    role = "Role 3";
-                                    break;
-                                case 4:
-                                    role = "Role 4";
-                                    break;
-                                default:
-                                    role = "Role Invalid";
-                                    break;
-                            }
+                                switch (pilihRole) {
+                                    case 1:
+                                        role = "Role 1";
+                                        break;
+                                    case 2:
+                                        role = "Role 2";
+                                        break;
+                                    case 3:
+                                        role = "Role 3";
+                                        break;
+                                    case 4:
+                                        role = "Role 4";
+                                        break;
+                                    default:
+                                        role = "Role Invalid";
+                                        break;
+                                }
 
-                            System.out.println("================================");
-                            System.out.println("| Nama Pegawai        : " + namaPegawai);
-                            System.out.println("| Role                : " + role);
-                            System.out.println("| Domisili            : " + domisili);
-                            System.out.println("| Riwayat Pendidikan  : " + pendidikan);
-                            System.out.println("| Riwayat penyakit    : " + penyakit);
-                            System.out.println("================================");
+                                System.out.println("================================");
+                                System.out.println("| Nama Pegawai        : " + namaPegawai);
+                                System.out.println("| Role                : " + role);
+                                System.out.println("| Domisili            : " + domisili);
+                                System.out.println("| Riwayat Pendidikan  : " + pendidikan);
+                                System.out.println("| Riwayat penyakit    : " + penyakit);
+                                System.out.println("================================");
 
-                            System.out.println("\n***Data telah ditambahkan***");
-
+                                System.out.println("\nData telah ditambahkan");
+                                System.out.print("Apakah anda ingin menambakan data lagi (y/t)");
+                                menu2 = inputNum.next().charAt(0);
+                            } while (menu2 == 'y' || menu2 == 'Y');
                             break;
                         case '3':
                             System.out.println("\n***** Menu Ubah Data Pegawai *****");
