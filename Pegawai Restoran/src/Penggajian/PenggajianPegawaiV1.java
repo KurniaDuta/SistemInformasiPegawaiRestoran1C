@@ -288,6 +288,8 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 9:
+                                System.out.println("Terima kasih");
+                                System.exit(0);
                                 break;
                             default:
                                 break;
