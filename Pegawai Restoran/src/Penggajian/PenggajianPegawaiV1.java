@@ -422,7 +422,7 @@ public class PenggajianPegawaiV1 {
                                 } else {
                                     System.out.println("Pilihan Role tidak valid.");
                                 }
-                                break;
+
                                 break;
                             case 6:
 
