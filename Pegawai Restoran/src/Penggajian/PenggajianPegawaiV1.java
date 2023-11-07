@@ -171,6 +171,24 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 2:
+                                if (employeeCount < fullNames.length) {
+                                    scanner.nextLine(); // Membersihkan newline
+                                    System.out.print("Nama Lengkap: ");
+                                    fullNames[employeeCount] = scanner.nextLine();
+                                    System.out.print("Role (" + roleList[0] + "/" + roleList[1] + "/" + roleList[2]
+                                            + "/" + roleList[3] + "): ");
+                                    roles[employeeCount] = scanner.nextLine();
+                                    System.out.print("Domisili: ");
+                                    domisilis[employeeCount] = scanner.nextLine();
+                                    System.out.print("Riwayat Penyakit: ");
+                                    riwayatPenyakits[employeeCount] = scanner.nextLine();
+                                    System.out.print("Riwayat Pendidikan: ");
+                                    riwayatPendidikans[employeeCount] = scanner.nextLine();
+
+                                    employeeCount++;
+                                } else {
+                                    System.out.println("Batas maksimum pegawai telah tercapai.");
+                                }
                                 break;
                             case 3:
                                 break;
