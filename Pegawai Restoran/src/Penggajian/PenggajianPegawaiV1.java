@@ -423,9 +423,44 @@ public class PenggajianPegawaiV1 {
                                     System.out.println("Pilihan Role tidak valid.");
                                 }
                                 break;
-                                break;
                             case 6:
+                                // menampilkan data pegawai
+                                System.out.println("Pilih Pegawai untuk Digaji:");
+                                System.out
+                                        .println("------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s%n", "No", "Nama Lengkap", "Role");
+                                System.out
+                                        .println("------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s%n",
+                                            i + 1, fullNames[i], roles[i]);
+                                }
+                                System.out
+                                        .println("------------------------------------------------------------------");
 
+                                System.out.print("Nomor Urut Pegawai yang Akan Digaji: ");
+                                int numberToPay = scanner.nextInt();
+                                if (numberToPay >= 1 && numberToPay <= employeeCount) {
+                                    int indexToPay = numberToPay - 1;
+                                    if (roles[indexToPay].equalsIgnoreCase(roleList[0])) {
+                                        salaries[indexToPay] = salaries[0];
+                                    } else if (roles[indexToPay].equalsIgnoreCase(roleList[1])) {
+                                        salaries[indexToPay] = salaries[1];
+                                    } else if (roles[indexToPay].equalsIgnoreCase(roleList[2])) {
+                                        salaries[indexToPay] = salaries[2];
+                                    } else if (roles[indexToPay].equalsIgnoreCase(roleList[3])) {
+                                        salaries[indexToPay] = salaries[3];
+                                    }
+
+                                    System.out.println("Masukkan Jumlah Izin: ");
+                                    izin[indexToPay] = scanner.nextInt();
+                                    System.out.println("Masukkan Jumlah Lembur: ");
+                                    lembur[indexToPay] = scanner.nextInt();
+
+                                    totalSalary[indexToPay] = (int) salaries[indexToPay] + (lembur[indexToPay] * 50000)
+                                            - (izin[indexToPay] * 50000);
+                                    System.out.println("Total Gaji: " + totalSalary[indexToPay]);
+                                }
                                 break;
                             case 7:
                                 break;
