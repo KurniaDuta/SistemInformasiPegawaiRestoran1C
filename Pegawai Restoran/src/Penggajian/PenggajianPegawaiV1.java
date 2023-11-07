@@ -123,6 +123,44 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 3:
+                                // menampilkan data pegawai
+                                System.out.println("Data Pegawai:");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit", "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s | %-20s | %-20s | %-30s%n",
+                                            i + 1, fullNames[i], roles[i], domisilis[i], riwayatPenyakits[i],
+                                            riwayatPendidikans[i]);
+                                }
+
+                                // proses hapus data pegawai
+                                System.out.print("Nomor Pegawai yang Akan Dihapus: ");
+                                int numberToDelete = scanner.nextInt();
+                                if (numberToDelete >= 1 && numberToDelete <= employeeCount) {
+                                    int indexToDelete = numberToDelete - 1;
+                                    for (int i = indexToDelete; i < employeeCount - 1; i++) {
+                                        fullNames[i] = fullNames[i + 1];
+                                        roles[i] = roles[i + 1];
+                                        domisilis[i] = domisilis[i + 1];
+                                        riwayatPenyakits[i] = riwayatPenyakits[i + 1];
+                                        riwayatPendidikans[i] = riwayatPendidikans[i + 1];
+                                    }
+                                    // Membersihkan data pegawai yang terakhir
+                                    fullNames[employeeCount - 1] = null;
+                                    roles[employeeCount - 1] = null;
+                                    domisilis[employeeCount - 1] = null;
+                                    riwayatPenyakits[employeeCount - 1] = null;
+                                    riwayatPendidikans[employeeCount - 1] = null;
+                                    employeeCount--;
+                                    System.out.println("Pegawai berhasil dihapus.");
+                                } else {
+                                    System.out.println("Indeks pegawai tidak valid.");
+                                }
+                                break;
                                 break;
                             case 4:
                                 break;
