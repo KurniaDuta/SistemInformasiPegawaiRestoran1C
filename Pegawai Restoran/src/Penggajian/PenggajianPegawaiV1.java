@@ -63,6 +63,10 @@ public class PenggajianPegawaiV1 {
             System.out.print("Masukkan password: ");
             String password = scanner.nextLine();
 
+            // Membersihkan tampilan
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+
             int userIndex = -1;
             for (int i = 0; i < usernames.length; i++) {
                 if (usernames[i].equals(username) && passwords[i].equals(password)) {
