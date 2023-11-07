@@ -157,6 +157,18 @@ public class PenggajianPegawaiV1 {
 
                         switch (choice) {
                             case 1:
+                                System.out.println("Data Pegawai:");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit", "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s | %-20s | %-20s | %-30s%n",
+                                            i + 1, fullNames[i], roles[i], domisilis[i], riwayatPenyakits[i],
+                                            riwayatPendidikans[i]);
+                                }
                                 break;
                             case 2:
                                 break;
