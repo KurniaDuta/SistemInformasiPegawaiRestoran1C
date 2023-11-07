@@ -399,8 +399,33 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 5:
+                                System.out.println("Input Gaji Pokok:");
+                                System.out
+                                        .println("------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-10s | %-10s%n", "Nomor", "Role", "Gaji Pokok");
+                                System.out
+                                        .println("------------------------------------------------------------------");
+                                for (int i = 0; i < roleList.length; i++) {
+                                    System.out.printf("%-10d | %-10s | %-10.2f%n", (i + 1), roleList[i], salaries[i]);
+                                }
+                                System.out
+                                        .println("------------------------------------------------------------------");
+
+                                System.out.print("Pilih Role untuk Mengatur Gaji Pokok (1/2/3/4): ");
+                                int roleChoice = scanner.nextInt();
+                                if (roleChoice >= 1 && roleChoice <= roleList.length) {
+                                    System.out.print("Masukkan Gaji Pokok untuk " + roleList[roleChoice - 1] + ": ");
+                                    double newSalary = scanner.nextDouble();
+                                    salaries[roleChoice - 1] = newSalary;
+                                    System.out.println(
+                                            "Gaji Pokok untuk " + roleList[roleChoice - 1] + " berhasil diatur.");
+                                } else {
+                                    System.out.println("Pilihan Role tidak valid.");
+                                }
+                                break;
                                 break;
                             case 6:
+
                                 break;
                             case 7:
                                 break;
