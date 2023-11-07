@@ -162,6 +162,58 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 4:
+                                // menampilkan data pegawai
+                                System.out.println("Data Pegawai:");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit", "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s | %-20s | %-20s | %-30s%n",
+                                            i + 1, fullNames[i], roles[i], domisilis[i], riwayatPenyakits[i],
+                                            riwayatPendidikans[i]);
+                                }
+
+                                // Proses update data pegawai
+                                System.out.print("Nomor Pegawai yang Akan Diedit: ");
+                                int numberToEdit = scanner.nextInt();
+                                if (numberToEdit >= 1 && numberToEdit <= employeeCount) {
+                                    int indexToEdit = numberToEdit - 1;
+                                    System.out.println(
+                                            "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
+                                    System.out.println("Pilih kolom yang akan diedit(1-5): ");
+                                    int columnToEdit = scanner.nextInt();
+                                    scanner.nextLine(); // Membersihkan newline
+                                    switch (columnToEdit) {
+                                        case 1:
+                                            System.out.print("Nama Lengkap: ");
+                                            fullNames[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 2:
+                                            System.out.print("Role (admin/manajer/chef/pelayan): ");
+                                            roles[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 3:
+                                            System.out.print("Domisili: ");
+                                            domisilis[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 4:
+                                            System.out.print("Riwayat Penyakit: ");
+                                            riwayatPenyakits[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 5:
+                                            System.out.print("Riwayat Pendidikan: ");
+                                            riwayatPendidikans[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    System.out.println("Pegawai berhasil diedit.");
+                                } else {
+                                    System.out.println("Nomor pegawai tidak valid.");
+                                }
                                 break;
                             case 5:
                                 scanner.nextLine(); // Membersihkan newline
@@ -253,8 +305,62 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 3:
+                            
                                 break;
                             case 4:
+                                // menampilkan data pegawai
+                                System.out.println("Data Pegawai:");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit", "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s | %-20s | %-20s | %-30s%n",
+                                            i + 1, fullNames[i], roles[i], domisilis[i], riwayatPenyakits[i],
+                                            riwayatPendidikans[i]);
+                                }
+
+                                // Proses update data pegawai
+                                System.out.print("Nomor Pegawai yang Akan Diedit: ");
+                                int numberToEdit = scanner.nextInt();
+                                if (numberToEdit >= 1 && numberToEdit <= employeeCount) {
+                                    int indexToEdit = numberToEdit - 1;
+                                    System.out.println(
+                                            "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
+                                    System.out.println("Pilih kolom yang akan diedit(1-5): ");
+                                    int columnToEdit = scanner.nextInt();
+                                    scanner.nextLine(); // Membersihkan newline
+                                    switch (columnToEdit) {
+                                        case 1:
+                                            System.out.print("Nama Lengkap: ");
+                                            fullNames[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 2:
+                                            System.out.print("Role (" + roleList[0] + "/" + roleList[1] + "/"
+                                                    + roleList[2] + "/" + roleList[3] + "): ");
+                                            roles[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 3:
+                                            System.out.print("Domisili: ");
+                                            domisilis[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 4:
+                                            System.out.print("Riwayat Penyakit: ");
+                                            riwayatPenyakits[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        case 5:
+                                            System.out.print("Riwayat Pendidikan: ");
+                                            riwayatPendidikans[indexToEdit] = scanner.nextLine();
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    System.out.println("Pegawai berhasil diedit.");
+                                } else {
+                                    System.out.println("Nomor pegawai tidak valid.");
+                                }
                                 break;
                             case 5:
                                 break;
