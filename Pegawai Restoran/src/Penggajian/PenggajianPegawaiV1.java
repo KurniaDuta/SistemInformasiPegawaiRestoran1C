@@ -76,6 +76,40 @@ public class PenggajianPegawaiV1 {
                 System.out.println("Login berhasil sebagai " + userLevel);
 
                 if (userLevel.equalsIgnoreCase("Admin")) {
+                    do {
+
+                        System.out.println("Menu:");
+                        System.out.println("1. Data Pegawai");
+                        System.out.println("2. Tambah Data Pegawai");
+                        System.out.println("3. Hapus Pegawai");
+                        System.out.println("4. Update Data Pegawai");
+                        System.out.println("5. Pencarian");
+                        System.out.println("6. Keluar");
+                        System.out.print("Pilihan: ");
+                        int choice = scanner.nextInt();
+
+                        switch (choice) {
+                            case 1:
+
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                            case 6:
+                                break;
+
+                            default:
+                                break;
+                        }
+
+                        System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
+                        back = scanner.next().charAt(0);
+                    } while (back == 'y' || back == 'Y');
 
                 } else if (userLevel.equalsIgnoreCase("Manager")) {
 
