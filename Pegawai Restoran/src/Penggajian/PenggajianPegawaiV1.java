@@ -127,8 +127,32 @@ public class PenggajianPegawaiV1 {
                             case 4:
                                 break;
                             case 5:
+                                scanner.nextLine(); // Membersihkan newline
+                                boolean found = false;
+                                System.out.print("Masukkan Nama Pegawai yang Dicari: ");
+                                String search = scanner.nextLine();
+                                for (int i = 0; i < employeeCount; i++) {
+                                    if (fullNames[i].toLowerCase().contains(search.toLowerCase())) {
+                                        System.out.println("Data Pegawai dengan Nama yang Dicari:");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-10s | %-20s | %-10s | %-20s | %-20s | %-30s%n", "Urutan",
+                                                "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                                "Riwayat Pendidikan");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-10d | %-20s | %-10s | %-20s | %-20s | %-30s%n",
+                                                i + 1, fullNames[i], roles[i], domisilis[i], riwayatPenyakits[i],
+                                                riwayatPendidikans[i]);
+                                        found = true;
+                                    }
+                                }
+                                if (!found) {
+                                    System.out.println("Data tidak ditemukan.");
+                                }
                                 break;
                             case 6:
+
                                 break;
 
                             default:
