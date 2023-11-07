@@ -463,6 +463,34 @@ public class PenggajianPegawaiV1 {
                                 }
                                 break;
                             case 7:
+                                System.out.println("Pilih Pegawai untuk Mencetak Slip Gaji:");
+                                System.out.println(
+                                        "------------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-10s | %-10s%n", "Urutan", "Nama Lengkap", "Role",
+                                        "Gaji");
+                                System.out.println(
+                                        "------------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < employeeCount; i++) {
+                                    System.out.printf("%-10d | %-20s | %-10s | %-10.2f%n",
+                                            i + 1, fullNames[i], roles[i], totalSalary[i]);
+                                }
+                                System.out.println(
+                                        "------------------------------------------------------------------------------------------------------------------");
+                                ;
+                                System.out.print("Nomor Urut Pegawai yang Akan Dicetak Slip Gaji: ");
+                                int numberToPrint = scanner.nextInt();
+                                if (numberToPrint >= 1 && numberToPrint <= employeeCount) {
+                                    int indexToPrint = numberToPrint - 1;
+                                    System.out.println("========== SLIP GAJI ==========");
+                                    System.out.println("Nama Karyawan: " + fullNames[indexToPrint]);
+                                    System.out.println("===============================");
+                                    System.out.println("Gaji Pokok: Rp" + salaries[indexToPrint]);
+                                    System.out.println("Lembur: Rp" + (lembur[indexToPrint] * 50000));
+                                    System.out.println("Potongan: Rp" + (izin[indexToPrint] * 50000));
+                                    System.out.println("===============================");
+                                    System.out.println("Total Gaji: Rp" + totalSalary[indexToPrint]);
+                                    System.out.println("========== TERIMA KASIH =========");
+                                }
                                 break;
                             case 8:
                                 scanner.nextLine(); // Membersihkan newline
