@@ -164,6 +164,91 @@ public class PenggajianPegawaiV2 {
                         System.out.print("--> ");
                         choice = sc.nextInt();
                         sc.nextLine();
+
+                        switch (choice) {
+                            case 1:
+                                System.out.println("==========================================");
+                                System.out.println("                LIST DATA                 ");
+                                System.out.println("==========================================");
+                                for (int i = 0; i < menuListData.length; i++) {
+                                    System.out.println((i + 1) + ". " + menuListData[i]);
+                                }
+                                System.out.print("--> ");
+                                choiceListData = sc.nextInt();
+                                sc.nextLine();
+                                switch (choiceListData) {
+                                    case 1:
+                                        System.out.println("==========================================");
+                                        System.out.println("               DATA PEGAWAI               ");
+                                        System.out.println("==========================================");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                                "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                                "Riwayat Pendidikan");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        for (int i = 0; i < counterData; i++) {
+                                            if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
+                                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
+                                                        data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                                        data[5][i]);
+                                            }
+                                        }
+                                        break;
+                                    case 2:
+                                        System.out.println("==========================================");
+                                        System.out.println("                DATA ADMIN                ");
+                                        System.out.println("==========================================");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                                "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                                "Riwayat Pendidikan");
+                                        System.out.println(
+                                                "---------------------------------------------------------------------------------------------------------------");
+                                        for (int i = 0; i < counterData; i++) {
+                                            if (data[2][i].equalsIgnoreCase(data[2][0])) {
+                                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
+                                                        data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                                        data[5][i]);
+                                            }
+                                        }
+                                        break;
+                                    case 3:
+                                        System.out.println("==========================================");
+                                        System.out.println("             Data Role & Gaji Pokok       ");
+                                        System.out.println("==========================================");
+                                        System.out.println(
+                                                "-----------------------------------------------");
+                                        System.out.printf("| %-20s | %-20s | %n", "Role", "Gaji Pokok");
+                                        System.out.println(
+                                                "-----------------------------------------------");
+                                        for (int i = 0; i < counterGaji; i++) {
+                                            System.out.printf("| %-20s | %-20d | %n", role[i], gajiPokok[i]);
+                                        }
+                                        System.out.println(
+                                                "-----------------------------------------------");
+                                        break;
+
+                                    default:
+                                        System.out.println("Data yang Anda masukkan salah");
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                            case 6:
+                                break;
+                            case 7:
+                                break;
+                        }
                     } else {
                         System.out.println("Selamat Datang " + data[1][userIndex]);
                         System.out.println("Pilih Menu:");
