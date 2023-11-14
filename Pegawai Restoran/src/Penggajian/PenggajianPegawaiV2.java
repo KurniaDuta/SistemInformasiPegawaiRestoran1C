@@ -97,5 +97,61 @@ public class PenggajianPegawaiV2 {
         // Variabels
         int userIndex = -1, choiceLogin, choice, choiceListData, back = 'n';
         boolean found;
+
+        do {
+            System.out.println("==========================================");
+            System.out.println("      SELAMAT DATANG DI RESTORAN 1C       ");
+            System.out.println("==========================================");
+            for (int i = 0; i < menuLogin.length; i++) {
+                System.out.println((i + 1) + ". " + menuLogin[i]);
+            }
+            System.out.print("--> ");
+            choiceLogin = sc.nextInt();
+            sc.nextLine();
+
+            switch (choiceLogin) {
+                case 1:
+                    for (int attempt = 1; attempt <= 3; attempt++) {
+                        // Login
+                        System.out.print("Masukkan username: ");
+                        String username = sc.nextLine();
+                        System.out.print("Masukkan password: ");
+                        String password = sc.nextLine();
+
+                        // Check Login
+                        boolean validCredentials = false;
+                        for (int i = 0; i < usernames.length; i++) {
+                            if (username.equals(usernames[i]) && password.equals(passwords[i])) {
+                                validCredentials = true;
+                                userIndex = i;
+                                break;
+                            }
+                        }
+
+                        if (validCredentials) {
+                            break;
+                        } else {
+                            System.out.println("==========================================");
+                            System.out.println("= Login Gagal. " + (3 - attempt) + " kali percobaan lagi =");
+                            System.out.println("==========================================");
+                            if (attempt == 3) {
+                                System.out.println("==========================================");
+                                System.out.println("= Maximum percobaan login telah tercapai. =");
+                                System.out.println("=     Silahkan coba lagi nanti            =");
+                                System.out.println("==========================================");
+                                break;
+                            }
+                        }
+
+                    }
+                    break;
+                case 2:
+                    break;
+
+                default:
+                    System.out.println("Menu Salah Masukkan Ulang!");
+                    break;
+            }
+        } while (choiceLogin != 2);
     }
 }
