@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class PenggajianPegawaiV2 {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         String[] usernames = new String[10];
@@ -146,6 +147,7 @@ public class PenggajianPegawaiV2 {
                     }
                     break;
                 case 2:
+
                     break;
 
                 default:
@@ -237,6 +239,92 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 2:
+                                System.out.println("==========================================");
+                                System.out.println("               TAMBAH DATA                ");
+                                System.out.println("==========================================");
+                                for (int i = 0; i < menuListData.length; i++) {
+                                    System.out.println((i + 1) + ". " + menuListData[i]);
+                                }
+                                System.out.print("--> ");
+                                choiceListData = sc.nextInt();
+                                sc.nextLine();
+                                switch (choiceListData) {
+                                    case 1:
+                                        System.out.println("==========================================");
+                                        System.out.println("               DATA PEGAWAI               ");
+                                        System.out.println("==========================================");
+                                        if (counterData < data[0].length) {
+                                            counterPegawai++;
+                                            data[0][counterData] = "P10" + counterPegawai;
+                                            System.out.println("ID Pegawai: " + data[0][counterData]);
+                                            System.out.print("Nama Lengkap: ");
+                                            data[1][counterData] = sc.nextLine();
+                                            System.out.print("Role(Chef/Cashier/Waiter/Receptionist): ");
+                                            data[2][counterData] = sc.nextLine();
+                                            System.out.print("Domisili: ");
+                                            data[3][counterData] = sc.nextLine();
+                                            System.out.print("Riwayat Penyakit: ");
+                                            data[4][counterData] = sc.nextLine();
+                                            System.out.print("Riwayat Pendidikan: ");
+                                            data[5][counterData] = sc.nextLine();
+                                            System.out.print("Username: ");
+                                            usernames[counterData] = sc.nextLine();
+                                            System.out.print("Password: ");
+                                            passwords[counterData] = sc.nextLine();
+
+                                            counterData++;
+                                        } else {
+                                            System.out.println("Batas maksimum pegawai telah tercapai.");
+                                        }
+                                        break;
+                                    case 2:
+                                        System.out.println("==========================================");
+                                        System.out.println("                DATA ADMIN                ");
+                                        System.out.println("==========================================");
+                                        if (counterData < data[0].length) {
+                                            counterAdmin++;
+                                            data[0][counterData] = "A10" + counterAdmin;
+                                            System.out.println("ID Admin: " + data[0][counterData]);
+                                            System.out.print("Nama Lengkap: ");
+                                            data[1][counterData] = sc.nextLine();
+                                            data[2][counterData] = data[2][0];
+                                            System.out.print("Domisili: ");
+                                            data[3][counterData] = sc.nextLine();
+                                            System.out.print("Riwayat Penyakit: ");
+                                            data[4][counterData] = sc.nextLine();
+                                            System.out.print("Riwayat Pendidikan: ");
+                                            data[5][counterData] = sc.nextLine();
+                                            System.out.print("Username: ");
+                                            usernames[counterData] = sc.nextLine();
+                                            System.out.print("Password: ");
+                                            passwords[counterData] = sc.nextLine();
+
+                                            counterData++;
+                                        } else {
+                                            System.out.println("Batas maksimum pegawai telah tercapai.");
+                                        }
+                                        break;
+                                    case 3:
+                                        System.out.println("==========================================");
+                                        System.out.println("             Data Role & Gaji Pokok       ");
+                                        System.out.println("==========================================");
+                                        if (counterGaji < role.length) {
+                                            System.out.print("Role: ");
+                                            role[counterGaji] = sc.nextLine();
+                                            System.out.print("Gaji Pokok: ");
+                                            gajiPokok[counterGaji] = sc.nextInt();
+                                            sc.nextLine();
+
+                                            System.out.println("Data berhasil ditambahkan");
+                                            counterGaji++;
+                                        } else {
+                                            System.out.println("Batas maksimum role telah tercapai.");
+                                        }
+                                        break;
+                                    default:
+                                        System.out.println("Input Tidak Valid");
+                                        break;
+                                }
                                 break;
                             case 3:
                                 break;
