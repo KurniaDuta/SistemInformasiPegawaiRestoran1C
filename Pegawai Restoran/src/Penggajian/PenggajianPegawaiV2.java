@@ -152,6 +152,12 @@ public class PenggajianPegawaiV2 {
                     System.out.println("Menu Salah Masukkan Ulang!");
                     break;
             }
+
+            if (userIndex != -1) {
+                
+            }else{
+                System.out.println("Terima Kasih");
+            }
         } while (choiceLogin != 2);
     }
 }
