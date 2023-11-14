@@ -154,8 +154,31 @@ public class PenggajianPegawaiV2 {
             }
 
             if (userIndex != -1) {
-                
-            }else{
+                do {
+                    if (data[2][userIndex].equals(data[2][0])) {
+                        System.out.println("Selamat Datang " + data[1][userIndex]);
+                        System.out.println("Pilih Menu:");
+                        for (int i = 0; i < menuAdmin.length; i++) {
+                            System.out.println((i + 1) + ". " + menuAdmin[i]);
+                        }
+                        System.out.print("--> ");
+                        choice = sc.nextInt();
+                        sc.nextLine();
+                    } else {
+                        System.out.println("Selamat Datang " + data[1][userIndex]);
+                        System.out.println("Pilih Menu:");
+                        System.out.println("on progress");
+                        System.out.print("--> ");
+                        choice = sc.nextInt();
+                        sc.nextLine();
+                    }
+
+                    if (userIndex != -1) {
+                        System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
+                        back = sc.next().charAt(0);
+                    }
+                } while ((back == 'y' || back == 'Y') && userIndex != -1);
+            } else {
                 System.out.println("Terima Kasih");
             }
         } while (choiceLogin != 2);
