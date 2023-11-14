@@ -327,6 +327,46 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 3:
+                                // Delete Data
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                        "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < counterData; i++) {
+                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
+                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                            data[5][i]);
+                                }
+                                System.out.print("Masukkan ID yang ingin dihapus: ");
+                                String idDelete = sc.nextLine();
+                                found = false;
+                                for (int i = 0; i < counterData; i++) {
+                                    if (data[0][i].toLowerCase().contains(idDelete.toLowerCase())) {
+                                        for (int j = i; j < counterData - 1; i++) {
+                                            data[0][j] = data[0][j + 1];
+                                            data[1][j] = data[0][j + 1];
+                                            data[2][j] = data[0][j + 1];
+                                            data[3][j] = data[0][j + 1];
+                                            data[4][j] = data[0][j + 1];
+                                            data[5][j] = data[0][j + 1];
+                                        }
+                                        data[0][counterData - 1] = null;
+                                        data[1][counterData - 1] = null;
+                                        data[2][counterData - 1] = null;
+                                        data[3][counterData - 1] = null;
+                                        data[4][counterData - 1] = null;
+                                        data[5][counterData - 1] = null;
+                                        counterData--;
+                                        System.out.println("Pegawai berhasil dihapus.");
+                                        found = true;
+                                    }
+                                }
+                                if (!found) {
+                                    System.out.println("Data tidak ditemukan.");
+                                }
                                 break;
                             case 4:
                                 break;
