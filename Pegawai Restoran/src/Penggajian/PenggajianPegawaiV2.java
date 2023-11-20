@@ -91,14 +91,14 @@ public class PenggajianPegawaiV2 {
         String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
                 "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Logout" };
         String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
-        String[] menuPegawai = {"Profil", "Slip Gaji" };
+        String[] menuPegawai = { "Profil", "Slip Gaji" };
 
         // Data
         int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
 
         // Variabels
         int userIndex = -1, choiceLogin, choice, choiceListData;
-        char  back = 'n';
+        char back = 'n';
         boolean found;
 
         do {
@@ -511,8 +511,18 @@ public class PenggajianPegawaiV2 {
                                 System.out.println("Riwayat Pendidikan: " + data[5][userIndex]);
                                 break;
                             case 2:
+                                System.out.println("\n========== SLIP GAJI ==========");
+                                System.out.println("ID Karyawan: " + data[0][userIndex]);
+                                System.out.println("Nama Karyawan: " + data[1][userIndex]);
+                                System.out.println("===============================");
+                                System.out.println("Gaji Pokok: Rp" + gajiPokok[userIndex]);
+                                System.out.println("Lembur: Rp" + (lembur[userIndex] * 50000));
+                                System.out.println("Potongan: Rp" + (izin[userIndex] * 50000));
+                                System.out.println("===============================");
+                                System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
+                                System.out.println("========== TERIMA KASIH ==========");
                                 break;
-                        
+
                             default:
                                 break;
                         }
