@@ -148,7 +148,8 @@ public class PenggajianPegawaiV2 {
                     }
                     break;
                 case 2:
-
+                    System.out.println("Terima Kasih");
+                    System.exit(0);
                     break;
 
                 default:
