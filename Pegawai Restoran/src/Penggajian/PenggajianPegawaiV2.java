@@ -538,5 +538,6 @@ public class PenggajianPegawaiV2 {
                 break;
             }
         } while (choiceLogin != 2);
+        sc.close();
     }
 }
