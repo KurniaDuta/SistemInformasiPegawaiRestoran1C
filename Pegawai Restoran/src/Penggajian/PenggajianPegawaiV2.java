@@ -304,7 +304,7 @@ public class PenggajianPegawaiV2 {
 
                                             counterData++;
                                         } else {
-                                            System.out.println("Batas maksimum pegawai telah tercapai.");
+                                            System.out.println("Batas maksimum admin telah tercapai.");
                                         }
                                         break;
                                     case 3:
