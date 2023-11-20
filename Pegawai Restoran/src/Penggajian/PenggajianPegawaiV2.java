@@ -96,7 +96,8 @@ public class PenggajianPegawaiV2 {
         int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
 
         // Variabels
-        int userIndex = -1, choiceLogin, choice, choiceListData, back = 'n';
+        int userIndex = -1, choiceLogin, choice, choiceListData;
+        char  back = 'n';
         boolean found;
 
         do {
