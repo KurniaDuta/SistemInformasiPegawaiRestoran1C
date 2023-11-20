@@ -428,6 +428,8 @@ public class PenggajianPegawaiV2 {
                             case 6:
                                 break;
                             case 7:
+                                System.out.println("Logging out...");
+                                userIndex = -1;
                                 break;
                         }
                     } else {
