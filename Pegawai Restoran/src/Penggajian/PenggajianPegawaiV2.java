@@ -19,15 +19,15 @@ public class PenggajianPegawaiV2 {
         // usernames
         usernames[0] = "admin";
         usernames[1] = "duta";
-        usernames[2] = "pram";
-        usernames[3] = "gayuh";
+        usernames[2] = "gayuh";
+        usernames[3] = "pram";
         usernames[4] = "rensi";
 
         // passwords
         passwords[0] = "admin";
         passwords[1] = "duta";
-        passwords[2] = "pram";
-        passwords[3] = "gayuh";
+        passwords[2] = "gayuh";
+        passwords[3] = "pram";
         passwords[4] = "rensi";
 
         // ID
