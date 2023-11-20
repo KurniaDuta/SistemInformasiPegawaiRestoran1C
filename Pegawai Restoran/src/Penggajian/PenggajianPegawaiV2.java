@@ -501,6 +501,21 @@ public class PenggajianPegawaiV2 {
                         System.out.print("--> ");
                         choice = sc.nextInt();
                         sc.nextLine();
+                        switch (choice) {
+                            case 1:
+                                System.out.println("ID Pegawai: " + data[0][userIndex]);
+                                System.out.println("Nama Lengkap: " + data[1][userIndex]);
+                                System.out.println("Role: " + data[2][userIndex]);
+                                System.out.println("Domisili: " + data[3][userIndex]);
+                                System.out.println("Riwayat Penyakit: " + data[4][userIndex]);
+                                System.out.println("Riwayat Pendidikan: " + data[5][userIndex]);
+                                break;
+                            case 2:
+                                break;
+                        
+                            default:
+                                break;
+                        }
                     }
 
                     if (userIndex != -1) {
