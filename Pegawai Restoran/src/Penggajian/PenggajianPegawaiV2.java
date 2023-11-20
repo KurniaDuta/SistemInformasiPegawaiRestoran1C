@@ -424,6 +424,34 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 5:
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                        "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < counterData; i++) {
+                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
+                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                            data[5][i]);
+                                }
+                                System.out.println("Masukkan ID yang ingin digaji: ");
+                                String idGaji = sc.nextLine();
+                                for (int i = 0; i < counterData; i++) {
+                                    if (data[0][i].toLowerCase().contains(idGaji.toLowerCase())) {
+                                        int indexToPay = i;
+                                        System.out.println("Masukkan Jumlah Izin: ");
+                                        izin[indexToPay] = sc.nextInt();
+                                        System.out.println("Masukkan Jumlah Lembur: ");
+                                        lembur[indexToPay] = sc.nextInt();
+
+                                        totalGaji[indexToPay] = (int) gajiPokok[indexToPay]
+                                                + (lembur[indexToPay] * 50000)
+                                                - (izin[indexToPay] * 50000);
+                                        System.out.println("Total Gaji: " + totalGaji[indexToPay]);
+                                    }
+                                }
                                 break;
                             case 6:
                                 break;
