@@ -91,6 +91,7 @@ public class PenggajianPegawaiV2 {
         String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
                 "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Logout" };
         String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
+        String[] menuPegawai = {"Profil", "Slip Gaji" };
 
         // Data
         int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
@@ -494,7 +495,9 @@ public class PenggajianPegawaiV2 {
                     } else {
                         System.out.println("Selamat Datang " + data[1][userIndex]);
                         System.out.println("Pilih Menu:");
-                        System.out.println("on progress");
+                        for (int i = 0; i < menuPegawai.length; i++) {
+                            System.out.println((i + 1) + ". " + menuPegawai[i]);
+                        }
                         System.out.print("--> ");
                         choice = sc.nextInt();
                         sc.nextLine();
