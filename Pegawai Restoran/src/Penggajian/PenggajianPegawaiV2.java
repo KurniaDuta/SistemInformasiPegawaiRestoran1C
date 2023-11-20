@@ -369,6 +369,59 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 4:
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                        "Riwayat Pendidikan");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < counterData; i++) {
+                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
+                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                            data[5][i]);
+                                }
+                                System.out.print("Masukkan ID yang ingin diedit: ");
+                                String idUpdate = sc.nextLine();
+                                found = false;
+                                for (int i = 0; i < counterData; i++) {
+                                    if (data[0][i].toLowerCase().contains(idUpdate.toLowerCase())) {
+                                        System.out.println(
+                                                "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
+                                        System.out.println("Pilih kolom yang akan diedit(1-5): ");
+                                        int columnToEdit = sc.nextInt();
+                                        sc.nextLine(); // Membersihkan newline
+                                        switch (columnToEdit) {
+                                            case 1:
+                                                System.out.print("Nama Lengkap: ");
+                                                data[1][i] = sc.nextLine();
+                                                break;
+                                            case 2:
+                                                System.out.print("Role (Chef/Cashier/Waiter/Receptionist): ");
+                                                data[2][i] = sc.nextLine();
+                                                break;
+                                            case 3:
+                                                System.out.print("Domisili: ");
+                                                data[3][i] = sc.nextLine();
+                                                break;
+                                            case 4:
+                                                System.out.print("Riwayat Penyakit: ");
+                                                data[4][i] = sc.nextLine();
+                                                break;
+                                            case 5:
+                                                System.out.print("Riwayat Pendidikan: ");
+                                                data[5][i] = sc.nextLine();
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                        System.out.println("Data berhasil diedit!");
+                                        found = true;
+                                    }
+                                }
+                                if (!found) {
+                                    System.out.println("Data tidak ditemukan.");
+                                }
                                 break;
                             case 5:
                                 break;
