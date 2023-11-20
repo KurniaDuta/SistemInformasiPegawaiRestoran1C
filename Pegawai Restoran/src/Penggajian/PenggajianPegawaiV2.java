@@ -535,7 +535,6 @@ public class PenggajianPegawaiV2 {
                 } while ((back == 'y' || back == 'Y') && userIndex != -1);
             } else {
                 System.out.println("Terima Kasih");
-                break;
             }
         } while (choiceLogin != 2);
         sc.close();
