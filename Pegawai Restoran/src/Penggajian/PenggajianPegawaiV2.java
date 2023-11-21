@@ -268,6 +268,12 @@ public class PenggajianPegawaiV2 {
                                             }
                                             System.out.print("): ");
                                             data[2][counterData] = sc.nextLine();
+                                            for (int i = 0; i < role.length; i++) {
+                                                if (role[i].toLowerCase().contains(data[2][counterData].toLowerCase())) {
+                                                    gajiPokok[counterData] = gajiPokok[i];
+                                                    break;
+                                                }
+                                            }
                                             System.out.print("Domisili: ");
                                             data[3][counterData] = sc.nextLine();
                                             System.out.print("Riwayat Penyakit: ");
