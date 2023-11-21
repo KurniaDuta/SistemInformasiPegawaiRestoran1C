@@ -491,6 +491,9 @@ public class PenggajianPegawaiV2 {
                                 System.out.println("Logging out...");
                                 userIndex = -1;
                                 break;
+                            default:
+                                System.out.println("Pilihan Tidak Valid");
+                                break;
                         }
                     } else {
                         System.out.println("Selamat Datang " + data[1][userIndex]);
@@ -525,6 +528,9 @@ public class PenggajianPegawaiV2 {
                             case 3:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
+                                break;
+                            default:
+                                System.out.println("Pilihan Tidak Valid");
                                 break;
                         }
                     }
