@@ -444,9 +444,14 @@ public class PenggajianPegawaiV2 {
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idGaji.toLowerCase())) {
                                         int indexToPay = i;
-                                        System.out.println("Masukkan Jumlah Izin: ");
+                                        do {
+                                        System.out.print("Masukkan Jumlah Izin: ");
                                         izin[indexToPay] = sc.nextInt();
-                                        System.out.println("Masukkan Jumlah Lembur: ");
+                                        if (izin[indexToPay] < 0 || izin[indexToPay] > 31) {
+                                            System.out.println("Mohon Masukkan Jumlah Izin yang Benar!");
+                                        }
+                                        } while (izin[indexToPay] < 0 || izin[indexToPay] > 31);
+                                        System.out.print("Masukkan Jumlah Lembur: ");
                                         lembur[indexToPay] = sc.nextInt();
 
                                         totalGaji[indexToPay] = (int) gajiPokok[indexToPay]
