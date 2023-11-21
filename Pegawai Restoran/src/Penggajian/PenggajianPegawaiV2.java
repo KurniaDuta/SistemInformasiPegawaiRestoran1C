@@ -301,6 +301,7 @@ public class PenggajianPegawaiV2 {
                                             System.out.print("Nama Lengkap: ");
                                             data[1][counterData] = sc.nextLine();
                                             data[2][counterData] = data[2][0];
+                                            gajiPokok[counterData] = gajiPokok[0];
                                             System.out.print("Domisili: ");
                                             data[3][counterData] = sc.nextLine();
                                             System.out.print("Riwayat Penyakit: ");
