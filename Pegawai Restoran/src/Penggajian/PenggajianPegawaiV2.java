@@ -262,7 +262,11 @@ public class PenggajianPegawaiV2 {
                                             System.out.println("ID Pegawai: " + data[0][counterData]);
                                             System.out.print("Nama Lengkap: ");
                                             data[1][counterData] = sc.nextLine();
-                                            System.out.print("Role(Chef/Cashier/Waiter/Receptionist): ");
+                                            System.out.print("Role (");
+                                            for (int j = 1; j < counterGaji; j++) {
+                                                System.out.print((j == counterGaji - 1) ? role[j] : role[j] + "/ ");
+                                            }
+                                            System.out.print("): ");
                                             data[2][counterData] = sc.nextLine();
                                             System.out.print("Domisili: ");
                                             data[3][counterData] = sc.nextLine();
@@ -400,7 +404,11 @@ public class PenggajianPegawaiV2 {
                                                 data[1][i] = sc.nextLine();
                                                 break;
                                             case 2:
-                                                System.out.print("Role (Chef/Cashier/Waiter/Receptionist): ");
+                                                System.out.print("Role (");
+                                                for (int j = 1; j < counterGaji; j++) {
+                                                    System.out.print((j == counterGaji - 1) ? role[j] : role[j] + "/ ");
+                                                }
+                                                System.out.print("): ");
                                                 data[2][i] = sc.nextLine();
                                                 break;
                                             case 3:
@@ -445,11 +453,11 @@ public class PenggajianPegawaiV2 {
                                     if (data[0][i].toLowerCase().contains(idGaji.toLowerCase())) {
                                         int indexToPay = i;
                                         do {
-                                        System.out.print("Masukkan Jumlah Izin: ");
-                                        izin[indexToPay] = sc.nextInt();
-                                        if (izin[indexToPay] < 0 || izin[indexToPay] > 31) {
-                                            System.out.println("Mohon Masukkan Jumlah Izin yang Benar!");
-                                        }
+                                            System.out.print("Masukkan Jumlah Izin: ");
+                                            izin[indexToPay] = sc.nextInt();
+                                            if (izin[indexToPay] < 0 || izin[indexToPay] > 31) {
+                                                System.out.println("Mohon Masukkan Jumlah Izin yang Benar!");
+                                            }
                                         } while (izin[indexToPay] < 0 || izin[indexToPay] > 31);
                                         System.out.print("Masukkan Jumlah Lembur: ");
                                         lembur[indexToPay] = sc.nextInt();
