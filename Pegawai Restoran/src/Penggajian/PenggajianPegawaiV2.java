@@ -403,46 +403,58 @@ public class PenggajianPegawaiV2 {
                                 int columnToEdit;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idUpdate.toLowerCase())) {
-                                        System.out.println(
-                                                "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
-                                        System.out.println("==========================================");
-                                        System.out.print("Pilih kolom yang akan diedit(1-5): ");
-                                        columnToEdit = sc.nextInt();
-                                        sc.nextLine(); // Membersihkan newline
-                                        switch (columnToEdit) {
-                                            case 1:
-                                                System.out.print("Nama Lengkap: ");
-                                                data[1][i] = sc.nextLine();
-                                                break;
-                                            case 2:
-                                                System.out.print("Role (");
-                                                for (int j = 1; j < counterGaji; j++) {
-                                                    System.out.print(
-                                                            (j == counterGaji - 1) ? role[j] : role[j] + "/ ");
-                                                }
-                                                System.out.print("): ");
-                                                data[2][i] = sc.nextLine();
-                                                break;
-                                            case 3:
-                                                System.out.print("Domisili: ");
-                                                data[3][i] = sc.nextLine();
-                                                break;
-                                            case 4:
-                                                System.out.print("Riwayat Penyakit: ");
-                                                data[4][i] = sc.nextLine();
-                                                break;
-                                            case 5:
-                                                System.out.print("Riwayat Pendidikan: ");
-                                                data[5][i] = sc.nextLine();
-                                                break;
-                                            default:
-                                                System.out.println("Pilihan menu tidak valid!");
-                                                break;
-                                        }
-                                        if (columnToEdit > 0 && columnToEdit <= 5) {
-                                            System.out.println("Data berhasil diedit!");
-                                        }
-                                        found = true;
+                                        edited = true;
+                                        do {
+                                            System.out.println(
+                                                    "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
+                                            System.out.println("==========================================");
+                                            System.out.print("Pilih kolom yang akan diedit(1-5): ");
+                                            columnToEdit = sc.nextInt();
+                                            sc.nextLine(); // Membersihkan newline
+                                            switch (columnToEdit) {
+                                                case 1:
+                                                    System.out.print("Nama Lengkap: ");
+                                                    data[1][i] = sc.nextLine();
+                                                    break;
+                                                case 2:
+                                                    System.out.print("Role (");
+                                                    for (int j = 1; j < counterGaji; j++) {
+                                                        System.out.print(
+                                                                (j == counterGaji - 1) ? role[j] : role[j] + "/ ");
+                                                    }
+                                                    System.out.print("): ");
+                                                    data[2][i] = sc.nextLine();
+                                                    break;
+                                                case 3:
+                                                    System.out.print("Domisili: ");
+                                                    data[3][i] = sc.nextLine();
+                                                    break;
+                                                case 4:
+                                                    System.out.print("Riwayat Penyakit: ");
+                                                    data[4][i] = sc.nextLine();
+                                                    break;
+                                                case 5:
+                                                    System.out.print("Riwayat Pendidikan: ");
+                                                    data[5][i] = sc.nextLine();
+                                                    break;
+                                                default:
+                                                    System.out.println("Pilihan menu tidak valid!");
+                                                    System.out.println("Apakah anda ingin mengedit ulang? (y/n)");
+                                                    System.out.print("--> ");
+                                                    char edit = sc.next().charAt(0);
+                                                    if (edit == 'y' || edit == 'Y') {
+                                                        edited = false;
+                                                    } else {
+                                                        edited = true;
+                                                        continue;
+                                                    }
+                                                    break;
+                                            }
+                                            if (columnToEdit > 0 && columnToEdit <= 5) {
+                                                System.out.println("Data berhasil diedit!");
+                                            }
+                                            found = true;
+                                        } while (!edited);
                                     }
                                 }
                                 if (!found) {
@@ -577,7 +589,7 @@ public class PenggajianPegawaiV2 {
                                             char edit = sc.next().charAt(0);
                                             if (edit == 'y' || edit == 'Y') {
                                                 edited = false;
-                                            }else{
+                                            } else {
                                                 edited = true;
                                                 continue;
                                             }
