@@ -91,13 +91,14 @@ public class PenggajianPegawaiV2 {
         String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
                 "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Logout" };
         String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
-        String[] menuPegawai = { "Profil", "Slip Gaji", "Logout" };
+        String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
+        String[] menueditPegawai = { "Domisili", "Nomor Telepon", "Kembali" };
 
         // Data
         int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
 
         // Variabels
-        int userIndex = -1, choiceLogin, choice, choiceListData;
+        int userIndex = -1, choiceLogin, choice, choiceListData, ChoiceEditPegawai;
         char back = 'n';
         boolean found;
 
@@ -269,7 +270,8 @@ public class PenggajianPegawaiV2 {
                                             System.out.print("): ");
                                             data[2][counterData] = sc.nextLine();
                                             for (int i = 0; i < role.length; i++) {
-                                                if (role[i].toLowerCase().contains(data[2][counterData].toLowerCase())) {
+                                                if (role[i].toLowerCase()
+                                                        .contains(data[2][counterData].toLowerCase())) {
                                                     gajiPokok[counterData] = gajiPokok[i];
                                                     break;
                                                 }
@@ -533,7 +535,41 @@ public class PenggajianPegawaiV2 {
                                 System.out.println("Riwayat Penyakit: " + data[4][userIndex]);
                                 System.out.println("Riwayat Pendidikan: " + data[5][userIndex]);
                                 break;
+
                             case 2:
+                                do {
+                                    System.out.println("ID pegawai: " + data[0][userIndex]);
+                                    System.out.println("Nama Pegawai: " + data[1][userIndex]);
+                                    System.out.println("Domisili: " + data[3][userIndex]);
+                                    System.out.println("Nomor Telepon: ");
+                                    System.out.println();
+                                    System.out.println("Masukkan data yang ingin di edit");
+                                    for (int i = 0; i < menueditPegawai.length; i++) {
+                                        System.out.println((i + 1) + ". " + menueditPegawai[i]);
+                                    }
+                                    System.out.print("--> ");
+                                    ChoiceEditPegawai = sc.nextInt();
+                                    sc.nextLine();
+
+                                    switch (ChoiceEditPegawai) {
+                                        case 1:
+                                            System.out.println("Masukkan Domisili baru: ");
+                                            data[3][userIndex] = sc.nextLine();
+                                            break;
+                                        case 2:
+                                            System.out.println("Masukkan Nomor Telepon baru: ");
+                                            break;
+                                        case 3:
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    System.out.println("Data Berhasil Di edit");
+                                    System.out.println("Apakah ada yang ingin di edit lagi? (y/n)");
+                                    back = sc.next().charAt(0);
+                                } while (back == 'y' || back == 'Y');
+                                break;
+                            case 3:
                                 System.out.println("\n========== SLIP GAJI ==========");
                                 System.out.println("ID Karyawan: " + data[0][userIndex]);
                                 System.out.println("Nama Karyawan: " + data[1][userIndex]);
@@ -545,7 +581,7 @@ public class PenggajianPegawaiV2 {
                                 System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
                                 System.out.println("========== TERIMA KASIH ==========");
                                 break;
-                            case 3:
+                            case 4:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
                                 break;
@@ -565,5 +601,6 @@ public class PenggajianPegawaiV2 {
             }
         } while (choiceLogin != 2);
         sc.close();
+
     }
 }
