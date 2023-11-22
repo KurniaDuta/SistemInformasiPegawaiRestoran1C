@@ -9,7 +9,7 @@ public class PenggajianPegawaiV2 {
 
         String[] usernames = new String[10];
         String[] passwords = new String[10];
-        String[][] data = new String[6][10];
+        String[][] data = new String[7][10];
         String[] role = new String[10];
         int[] gajiPokok = new int[10];
         double[] totalGaji = new double[10]; // total gaji
@@ -71,6 +71,13 @@ public class PenggajianPegawaiV2 {
         data[5][2] = "SMK";
         data[5][3] = "SMA";
         data[5][4] = "SMK";
+
+        // Nomor Telepon
+        data[6][0] = "08123456789";
+        data[6][1] = "08123456789";
+        data[6][2] = "08123456789";
+        data[6][3] = "08123456789";
+        data[6][4] = "08123456789";
 
         // Role
         role[0] = "Manager";
@@ -188,16 +195,19 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("               DATA PEGAWAI               ");
                                         System.out.println("==========================================");
                                         System.out.println(
-                                                "---------------------------------------------------------------------------------------------------------------");
-                                        System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
-                                                "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                                "--------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                                                "ID",
+                                                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
                                                 "Riwayat Pendidikan");
                                         System.out.println(
-                                                "---------------------------------------------------------------------------------------------------------------");
+                                                "--------------------------------------------------------------------------------------------------------------------------");
                                         for (int i = 0; i < counterData; i++) {
                                             if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
-                                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                                        data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                                System.out.printf(
+                                                        "%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                                                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i],
+                                                        data[4][i],
                                                         data[5][i]);
                                             }
                                         }
@@ -207,16 +217,19 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("                DATA ADMIN                ");
                                         System.out.println("==========================================");
                                         System.out.println(
-                                                "---------------------------------------------------------------------------------------------------------------");
-                                        System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
-                                                "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
+                                                "--------------------------------------------------------------------------------------------------------------------------");
+                                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                                                "ID",
+                                                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
                                                 "Riwayat Pendidikan");
                                         System.out.println(
-                                                "---------------------------------------------------------------------------------------------------------------");
+                                                "--------------------------------------------------------------------------------------------------------------------------");
                                         for (int i = 0; i < counterData; i++) {
                                             if (data[2][i].equalsIgnoreCase(data[2][0])) {
-                                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                                        data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
+                                                System.out.printf(
+                                                        "%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                                                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i],
+                                                        data[4][i],
                                                         data[5][i]);
                                             }
                                         }
@@ -276,6 +289,8 @@ public class PenggajianPegawaiV2 {
                                                     break;
                                                 }
                                             }
+                                            System.out.print("Nomor Telepon: ");
+                                            data[6][counterData] = sc.nextLine();
                                             System.out.print("Domisili: ");
                                             data[3][counterData] = sc.nextLine();
                                             System.out.print("Riwayat Penyakit: ");
@@ -304,6 +319,8 @@ public class PenggajianPegawaiV2 {
                                             data[1][counterData] = sc.nextLine();
                                             data[2][counterData] = data[2][0];
                                             gajiPokok[counterData] = gajiPokok[0];
+                                            System.out.print("Nomor Telepon: ");
+                                            data[6][counterData] = sc.nextLine();
                                             System.out.print("Domisili: ");
                                             data[3][counterData] = sc.nextLine();
                                             System.out.print("Riwayat Penyakit: ");
@@ -346,7 +363,7 @@ public class PenggajianPegawaiV2 {
                                 // Delete Data
                                 System.out.println(
                                         "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
                                         "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
                                         "Riwayat Pendidikan");
                                 System.out.println(
@@ -387,7 +404,7 @@ public class PenggajianPegawaiV2 {
                             case 4:
                                 System.out.println(
                                         "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
                                         "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
                                         "Riwayat Pendidikan");
                                 System.out.println(
@@ -464,7 +481,7 @@ public class PenggajianPegawaiV2 {
                             case 5:
                                 System.out.println(
                                         "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
                                         "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
                                         "Riwayat Pendidikan");
                                 System.out.println(
@@ -503,7 +520,7 @@ public class PenggajianPegawaiV2 {
                             case 6:
                                 System.out.println(
                                         "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "No",
+                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
                                         "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
                                         "Riwayat Pendidikan");
                                 System.out.println(
@@ -550,12 +567,13 @@ public class PenggajianPegawaiV2 {
                         sc.nextLine();
                         switch (choice) {
                             case 1:
-                                System.out.println("ID Pegawai: " + data[0][userIndex]);
-                                System.out.println("Nama Lengkap: " + data[1][userIndex]);
-                                System.out.println("Role: " + data[2][userIndex]);
-                                System.out.println("Domisili: " + data[3][userIndex]);
-                                System.out.println("Riwayat Penyakit: " + data[4][userIndex]);
-                                System.out.println("Riwayat Pendidikan: " + data[5][userIndex]);
+                                System.out.println("ID Pegawai\t\t: " + data[0][userIndex]);
+                                System.out.println("Nama Lengkap\t\t: " + data[1][userIndex]);
+                                System.out.println("Role\t\t\t: " + data[2][userIndex]);
+                                System.out.println("Nomor Telepon\t\t: " + data[6][userIndex]);
+                                System.out.println("Domisili\t\t: " + data[3][userIndex]);
+                                System.out.println("Riwayat Penyakit\t: " + data[4][userIndex]);
+                                System.out.println("Riwayat Pendidikan\t: " + data[5][userIndex]);
                                 break;
 
                             case 2:
@@ -564,7 +582,7 @@ public class PenggajianPegawaiV2 {
                                     System.out.println("\nID pegawai\t: " + data[0][userIndex]);
                                     System.out.println("Nama Pegawai\t: " + data[1][userIndex]);
                                     System.out.println("Domisili\t: " + data[3][userIndex]);
-                                    System.out.println("Nomor Telepon:\t");
+                                    System.out.println("Nomor Telepon\t: " + data[6][userIndex]);
                                     System.out.println();
                                     System.out.println("Masukkan data yang ingin di edit");
                                     for (int i = 0; i < menueditPegawai.length; i++) {
@@ -581,6 +599,7 @@ public class PenggajianPegawaiV2 {
                                             break;
                                         case 2:
                                             System.out.println("Masukkan Nomor Telepon baru: ");
+                                            data[6][userIndex] = sc.nextLine();
                                             break;
                                         default:
                                             System.out.println("Pilihan tidak valid");
