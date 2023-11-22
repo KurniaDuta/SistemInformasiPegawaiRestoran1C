@@ -92,7 +92,7 @@ public class PenggajianPegawaiV2 {
                 "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Logout" };
         String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
         String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
-        String[] menueditPegawai = { "Domisili", "Nomor Telepon", "Kembali" };
+        String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
 
         // Data
         int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
@@ -547,8 +547,9 @@ public class PenggajianPegawaiV2 {
                                 break;
 
                             case 2:
+                                found = true;
                                 do {
-                                    System.out.println("ID pegawai: " + data[0][userIndex]);
+                                    System.out.println("\nID pegawai: " + data[0][userIndex]);
                                     System.out.println("Nama Pegawai: " + data[1][userIndex]);
                                     System.out.println("Domisili: " + data[3][userIndex]);
                                     System.out.println("Nomor Telepon: ");
@@ -565,19 +566,23 @@ public class PenggajianPegawaiV2 {
                                         case 1:
                                             System.out.println("Masukkan Domisili baru: ");
                                             data[3][userIndex] = sc.nextLine();
+                                            found = true;
                                             break;
                                         case 2:
                                             System.out.println("Masukkan Nomor Telepon baru: ");
-                                            break;
-                                        case 3:
+                                            found = true;
                                             break;
                                         default:
-                                            break;
+                                            System.out.println("Pilihan tidak valid");
+                                            found = false;
+                                            continue;
                                     }
-                                    System.out.println("Data Berhasil Di edit");
-                                    System.out.println("Apakah ada yang ingin di edit lagi? (y/n)");
-                                    back = sc.next().charAt(0);
-                                } while (back == 'y' || back == 'Y');
+                                    if (found) {
+                                        System.out.println("Data Berhasil Di edit");
+                                    } else {
+                                        continue;
+                                    }
+                                } while (found==false);
                                 break;
                             case 3:
                                 System.out.println("\n========== SLIP GAJI ==========");
