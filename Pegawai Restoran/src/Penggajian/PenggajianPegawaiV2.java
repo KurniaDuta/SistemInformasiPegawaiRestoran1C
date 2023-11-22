@@ -119,7 +119,7 @@ public class PenggajianPegawaiV2 {
                         System.out.print("Masukkan username: ");
                         String username = sc.nextLine();
                         System.out.print("Masukkan password: ");
-                        String password = sc.nextLine();
+                        String password = new String(System.console().readPassword());
 
                         // Check Login
                         boolean validCredentials = false;
