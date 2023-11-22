@@ -100,7 +100,7 @@ public class PenggajianPegawaiV2 {
         // Variabels
         int userIndex = -1, choiceLogin, choice, choiceListData, ChoiceEditPegawai;
         char back = 'n';
-        boolean found;
+        boolean found, edited;
 
         do {
             System.out.println("==========================================");
@@ -547,12 +547,12 @@ public class PenggajianPegawaiV2 {
                                 break;
 
                             case 2:
-                                found = true;
+                                edited = true;
                                 do {
-                                    System.out.println("\nID pegawai: " + data[0][userIndex]);
-                                    System.out.println("Nama Pegawai: " + data[1][userIndex]);
-                                    System.out.println("Domisili: " + data[3][userIndex]);
-                                    System.out.println("Nomor Telepon: ");
+                                    System.out.println("\nID pegawai\t: " + data[0][userIndex]);
+                                    System.out.println("Nama Pegawai\t: " + data[1][userIndex]);
+                                    System.out.println("Domisili\t: " + data[3][userIndex]);
+                                    System.out.println("Nomor Telepon:\t");
                                     System.out.println();
                                     System.out.println("Masukkan data yang ingin di edit");
                                     for (int i = 0; i < menueditPegawai.length; i++) {
@@ -566,23 +566,27 @@ public class PenggajianPegawaiV2 {
                                         case 1:
                                             System.out.println("Masukkan Domisili baru: ");
                                             data[3][userIndex] = sc.nextLine();
-                                            found = true;
                                             break;
                                         case 2:
                                             System.out.println("Masukkan Nomor Telepon baru: ");
-                                            found = true;
                                             break;
                                         default:
                                             System.out.println("Pilihan tidak valid");
-                                            found = false;
-                                            continue;
+                                            System.out.println("Apakah anda ingin mengedit ulang? (y/n)");
+                                            System.out.print("--> ");
+                                            char edit = sc.next().charAt(0);
+                                            if (edit == 'y' || edit == 'Y') {
+                                                edited = false;
+                                            }else{
+                                                edited = true;
+                                                continue;
+                                            }
+                                            break;
                                     }
-                                    if (found) {
+                                    if (edited) {
                                         System.out.println("Data Berhasil Di edit");
-                                    } else {
-                                        continue;
                                     }
-                                } while (found==false);
+                                } while (!edited);
                                 break;
                             case 3:
                                 System.out.println("\n========== SLIP GAJI ==========");
