@@ -400,12 +400,14 @@ public class PenggajianPegawaiV2 {
                                 System.out.print("Masukkan ID yang ingin diedit: ");
                                 String idUpdate = sc.nextLine();
                                 found = false;
+                                int columnToEdit;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idUpdate.toLowerCase())) {
                                         System.out.println(
                                                 "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
-                                        System.out.println("Pilih kolom yang akan diedit(1-5): ");
-                                        int columnToEdit = sc.nextInt();
+                                        System.out.println("==========================================");
+                                        System.out.print("Pilih kolom yang akan diedit(1-5): ");
+                                        columnToEdit = sc.nextInt();
                                         sc.nextLine(); // Membersihkan newline
                                         switch (columnToEdit) {
                                             case 1:
@@ -415,7 +417,8 @@ public class PenggajianPegawaiV2 {
                                             case 2:
                                                 System.out.print("Role (");
                                                 for (int j = 1; j < counterGaji; j++) {
-                                                    System.out.print((j == counterGaji - 1) ? role[j] : role[j] + "/ ");
+                                                    System.out.print(
+                                                            (j == counterGaji - 1) ? role[j] : role[j] + "/ ");
                                                 }
                                                 System.out.print("): ");
                                                 data[2][i] = sc.nextLine();
@@ -433,9 +436,12 @@ public class PenggajianPegawaiV2 {
                                                 data[5][i] = sc.nextLine();
                                                 break;
                                             default:
+                                                System.out.println("Pilihan menu tidak valid!");
                                                 break;
                                         }
-                                        System.out.println("Data berhasil diedit!");
+                                        if (columnToEdit > 0 && columnToEdit <= 5) {
+                                            System.out.println("Data berhasil diedit!");
+                                        }
                                         found = true;
                                     }
                                 }
@@ -458,6 +464,7 @@ public class PenggajianPegawaiV2 {
                                 }
                                 System.out.println("Masukkan ID yang ingin digaji: ");
                                 String idGaji = sc.nextLine();
+                                found = false;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idGaji.toLowerCase())) {
                                         int indexToPay = i;
@@ -475,6 +482,9 @@ public class PenggajianPegawaiV2 {
                                                 + (lembur[indexToPay] * 50000)
                                                 - (izin[indexToPay] * 50000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
+                                    } else if (!found) {
+                                        System.out.println("Data tidak ditemukan!");
+                                        found = true;
                                     }
                                 }
                                 break;
@@ -592,6 +602,7 @@ public class PenggajianPegawaiV2 {
                     }
 
                     if (userIndex != -1) {
+                        System.out.println("==========================================");
                         System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
                         back = sc.next().charAt(0);
                     }
