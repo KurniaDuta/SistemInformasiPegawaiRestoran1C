@@ -511,10 +511,11 @@ public class PenggajianPegawaiV2 {
                                                 + (lembur[indexToPay] * 50000)
                                                 - (izin[indexToPay] * 50000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
-                                    } else if (!found) {
-                                        System.out.println("Data tidak ditemukan!");
                                         found = true;
                                     }
+                                }
+                                if (!found) {
+                                    System.out.println("Data tidak ditemukan!");
                                 }
                                 break;
                             case 6:
@@ -532,6 +533,7 @@ public class PenggajianPegawaiV2 {
                                 }
                                 System.out.println("Masukkan ID yang ingin slip gaji dicetak: ");
                                 String idSlip = sc.nextLine();
+                                found = false;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSlip.toLowerCase())) {
                                         int indexToPrint = i;
@@ -545,7 +547,11 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("===============================");
                                         System.out.println("Total Gaji: Rp" + totalGaji[indexToPrint]);
                                         System.out.println("========== TERIMA KASIH =========");
+                                        found = true;
                                     }
+                                }
+                                if (!found) {
+                                    System.out.println("Data tidak ditemukan!");
                                 }
                                 break;
                             case 7:
