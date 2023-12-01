@@ -96,7 +96,7 @@ public class PenggajianPegawaiV2 {
         // Menu
         String[] menuLogin = { "Login", "Exit" };
         String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
-                "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Logout" };
+                "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Laporan Pegawai", "Logout" };
         String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
         String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
         String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
@@ -555,6 +555,18 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 7:
+                                System.out.println(
+                                        "-------------------------------------------------------------------------------------");
+                                System.out.printf("%-5s | %-20s | %-15s | %-15s | %-15s%n", "ID",
+                                        "Nama Lengkap", "Total Lembur", "Total Izin", "Total Gaji");
+                                System.out.println(
+                                        "-------------------------------------------------------------------------------------");
+                                for (int i = 0; i < counterData; i++) {
+                                    System.out.printf("%-5s | %-20s | %-15s | %-15s | %-15s%n", data[0][i], data[1][i],
+                                            lembur[i], izin[i], totalGaji[i]);
+                                }
+                                break;
+                            case 8:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
                                 break;
