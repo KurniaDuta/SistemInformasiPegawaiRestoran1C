@@ -378,13 +378,14 @@ public class PenggajianPegawaiV2 {
                                 found = false;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idDelete.toLowerCase())) {
-                                        for (int j = i; j < counterData - 1; i++) {
+                                        for (int j = i; j < counterData - 1; j++) { 
                                             data[0][j] = data[0][j + 1];
-                                            data[1][j] = data[0][j + 1];
-                                            data[2][j] = data[0][j + 1];
-                                            data[3][j] = data[0][j + 1];
-                                            data[4][j] = data[0][j + 1];
-                                            data[5][j] = data[0][j + 1];
+                                            data[1][j] = data[1][j + 1];
+                                            data[2][j] = data[2][j + 1];
+                                            data[3][j] = data[3][j + 1];
+                                            data[4][j] = data[4][j + 1];
+                                            data[5][j] = data[5][j + 1];
+                                            data[6][j] = data[6][j + 1];
                                         }
                                         data[0][counterData - 1] = null;
                                         data[1][counterData - 1] = null;
@@ -392,11 +393,14 @@ public class PenggajianPegawaiV2 {
                                         data[3][counterData - 1] = null;
                                         data[4][counterData - 1] = null;
                                         data[5][counterData - 1] = null;
+                                        data[6][counterData - 1] = null;
                                         counterData--;
                                         System.out.println("Pegawai berhasil dihapus.");
                                         found = true;
+                                        break; 
                                     }
                                 }
+                                
                                 if (!found) {
                                     System.out.println("Data tidak ditemukan.");
                                 }
