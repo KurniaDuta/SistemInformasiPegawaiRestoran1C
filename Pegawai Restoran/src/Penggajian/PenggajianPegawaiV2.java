@@ -108,6 +108,7 @@ public class PenggajianPegawaiV2 {
         gajiPokok[3] = 3_000_000;
         gajiPokok[4] = 3_000_000;
     }
+
     public static void main(String[] args) {
         do {
             System.out.println("==========================================");
@@ -119,7 +120,7 @@ public class PenggajianPegawaiV2 {
             System.out.print("--> ");
             choiceLogin = sc.nextInt();
             sc.nextLine();
-            
+
             switch (choiceLogin) {
                 case 1:
                     for (int attempt = 1; attempt <= 3; attempt++) {
@@ -194,45 +195,13 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("==========================================");
                                         System.out.println("               DATA PEGAWAI               ");
                                         System.out.println("==========================================");
-                                        System.out.println(
-                                                "--------------------------------------------------------------------------------------------------------------------------");
-                                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
-                                                "ID",
-                                                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
-                                                "Riwayat Pendidikan");
-                                        System.out.println(
-                                                "--------------------------------------------------------------------------------------------------------------------------");
-                                        for (int i = 0; i < counterData; i++) {
-                                            if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
-                                                System.out.printf(
-                                                        "%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
-                                                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i],
-                                                        data[4][i],
-                                                        data[5][i]);
-                                            }
-                                        }
+                                        tabelListData("pegawai");
                                         break;
                                     case 2:
                                         System.out.println("==========================================");
                                         System.out.println("                DATA ADMIN                ");
                                         System.out.println("==========================================");
-                                        System.out.println(
-                                                "--------------------------------------------------------------------------------------------------------------------------");
-                                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
-                                                "ID",
-                                                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
-                                                "Riwayat Pendidikan");
-                                        System.out.println(
-                                                "--------------------------------------------------------------------------------------------------------------------------");
-                                        for (int i = 0; i < counterData; i++) {
-                                            if (data[2][i].equalsIgnoreCase(data[2][0])) {
-                                                System.out.printf(
-                                                        "%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
-                                                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i],
-                                                        data[4][i],
-                                                        data[5][i]);
-                                            }
-                                        }
+                                        tabelListData("admin");
                                         break;
                                     case 3:
                                         System.out.println("==========================================");
@@ -361,24 +330,13 @@ public class PenggajianPegawaiV2 {
                                 break;
                             case 3:
                                 // Delete Data
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
-                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
-                                        "Riwayat Pendidikan");
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                for (int i = 0; i < counterData; i++) {
-                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
-                                            data[5][i]);
-                                }
+                                tabelListData("allData");
                                 System.out.print("Masukkan ID yang ingin dihapus: ");
                                 String idDelete = sc.nextLine();
                                 found = false;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idDelete.toLowerCase())) {
-                                        for (int j = i; j < counterData - 1; j++) { 
+                                        for (int j = i; j < counterData - 1; j++) {
                                             data[0][j] = data[0][j + 1];
                                             data[1][j] = data[1][j + 1];
                                             data[2][j] = data[2][j + 1];
@@ -397,27 +355,16 @@ public class PenggajianPegawaiV2 {
                                         counterData--;
                                         System.out.println("Pegawai berhasil dihapus.");
                                         found = true;
-                                        break; 
+                                        break;
                                     }
                                 }
-                                
+
                                 if (!found) {
                                     System.out.println("Data tidak ditemukan.");
                                 }
                                 break;
                             case 4:
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
-                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
-                                        "Riwayat Pendidikan");
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                for (int i = 0; i < counterData; i++) {
-                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
-                                            data[5][i]);
-                                }
+                                tabelListData("allData");
                                 System.out.print("Masukkan ID yang ingin diedit: ");
                                 String idUpdate = sc.nextLine();
                                 found = false;
@@ -483,18 +430,7 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 5:
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
-                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
-                                        "Riwayat Pendidikan");
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                for (int i = 0; i < counterData; i++) {
-                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
-                                            data[5][i]);
-                                }
+                                tabelListData("allData");
                                 System.out.println("Masukkan ID yang ingin digaji: ");
                                 String idGaji = sc.nextLine();
                                 found = false;
@@ -523,18 +459,7 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 6:
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n", "ID",
-                                        "Nama Lengkap", "Role", "Domisili", "Riwayat Penyakit",
-                                        "Riwayat Pendidikan");
-                                System.out.println(
-                                        "---------------------------------------------------------------------------------------------------------------");
-                                for (int i = 0; i < counterData; i++) {
-                                    System.out.printf("%-10s | %-20s | %-20s | %-20s | %-20s | %-30s%n",
-                                            data[0][i], data[1][i], data[2][i], data[3][i], data[4][i],
-                                            data[5][i]);
-                                }
+                                tabelListData("allData");
                                 System.out.println("Masukkan ID yang ingin slip gaji dicetak: ");
                                 String idSlip = sc.nextLine();
                                 found = false;
@@ -675,5 +600,39 @@ public class PenggajianPegawaiV2 {
         } while (choiceLogin != 2);
         sc.close();
 
+    }
+
+    static void tabelListData(String status) {
+        System.out.println(
+                "--------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                "ID",
+                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
+                "Riwayat Pendidikan");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------------------------------------");
+        if (status.equalsIgnoreCase("pegawai")) {
+            for (int i = 0; i < counterData; i++) {
+                if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
+                    System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
+                            data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
+                            data[5][i]);
+                }
+            }
+        } else if (status.equalsIgnoreCase("admin")) {
+            for (int i = 0; i < counterData; i++) {
+                if (data[2][i].equalsIgnoreCase(data[2][0])) {
+                    System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
+                            data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
+                            data[5][i]);
+                }
+            }
+        } else {
+            for (int i = 0; i < counterData; i++) {
+                System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
+                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
+                        data[5][i]);
+            }
+        }
     }
 }
