@@ -3,19 +3,34 @@ package Penggajian;
 import java.util.Scanner;
 
 public class PenggajianPegawaiV2 {
-    public static void main(String[] args) {
+    static Scanner sc = new Scanner(System.in);
+    static String[] usernames = new String[10];
+    static String[] passwords = new String[10];
+    static String[][] data = new String[7][10];
+    static String[] role = new String[10];
+    static int[] gajiPokok = new int[10];
+    static double[] totalGaji = new double[10]; // total gaji
+    static int[] izin = new int[10]; // Izin
+    static int[] lembur = new int[10]; // Lembur
 
-        Scanner sc = new Scanner(System.in);
+    // Menu
+    static String[] menuLogin = { "Login", "Exit" };
+    static String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
+            "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Laporan Pegawai", "Logout" };
+    static String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
+    static String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
+    static String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
 
-        String[] usernames = new String[10];
-        String[] passwords = new String[10];
-        String[][] data = new String[7][10];
-        String[] role = new String[10];
-        int[] gajiPokok = new int[10];
-        double[] totalGaji = new double[10]; // total gaji
-        int[] izin = new int[10]; // Izin
-        int[] lembur = new int[10]; // Lembur
+    // Data
+    static int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
 
+    // Variabels
+    static int userIndex = -1, choiceLogin, choice, choiceListData, ChoiceEditPegawai;
+    static char back = 'n';
+    static boolean found, edited;
+    static String idSearch;
+
+    static {
         // usernames
         usernames[0] = "admin";
         usernames[1] = "duta";
@@ -92,23 +107,8 @@ public class PenggajianPegawaiV2 {
         gajiPokok[2] = 3_000_000;
         gajiPokok[3] = 3_000_000;
         gajiPokok[4] = 3_000_000;
-
-        // Menu
-        String[] menuLogin = { "Login", "Exit" };
-        String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
-                "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Laporan Pegawai", "Logout" };
-        String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
-        String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
-        String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
-
-        // Data
-        int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
-
-        // Variabels
-        int userIndex = -1, choiceLogin, choice, choiceListData, ChoiceEditPegawai;
-        char back = 'n';
-        boolean found, edited;
-
+    }
+    public static void main(String[] args) {
         do {
             System.out.println("==========================================");
             System.out.println("      SELAMAT DATANG DI RESTORAN 1C       ");
@@ -119,7 +119,7 @@ public class PenggajianPegawaiV2 {
             System.out.print("--> ");
             choiceLogin = sc.nextInt();
             sc.nextLine();
-
+            
             switch (choiceLogin) {
                 case 1:
                     for (int attempt = 1; attempt <= 3; attempt++) {
