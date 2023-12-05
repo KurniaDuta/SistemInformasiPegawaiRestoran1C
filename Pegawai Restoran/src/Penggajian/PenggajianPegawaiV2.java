@@ -207,16 +207,7 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("==========================================");
                                         System.out.println("             Data Role & Gaji Pokok       ");
                                         System.out.println("==========================================");
-                                        System.out.println(
-                                                "-----------------------------------------------");
-                                        System.out.printf("| %-20s | %-20s | %n", "Role", "Gaji Pokok");
-                                        System.out.println(
-                                                "-----------------------------------------------");
-                                        for (int i = 0; i < counterGaji; i++) {
-                                            System.out.printf("| %-20s | %-20d | %n", role[i], gajiPokok[i]);
-                                        }
-                                        System.out.println(
-                                                "-----------------------------------------------");
+                                        tabelListData("role");
                                         break;
 
                                     default:
@@ -572,36 +563,49 @@ public class PenggajianPegawaiV2 {
     }
 
     static void tabelListData(String status) {
-        System.out.println(
-                "--------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
-                "ID",
-                "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
-                "Riwayat Pendidikan");
-        System.out.println(
-                "--------------------------------------------------------------------------------------------------------------------------");
-        if (status.equalsIgnoreCase("pegawai")) {
-            for (int i = 0; i < counterData; i++) {
-                if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
+        if (status.equals("pegawai") || status.equals("admin")|| status.equals("allData")) {
+            System.out.println(
+                    "--------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-20s%n",
+                    "ID",
+                    "Nama Lengkap", "Nomor Telepon", "Role", "Domisili", "Riwayat Penyakit",
+                    "Riwayat Pendidikan");
+            System.out.println(
+                    "--------------------------------------------------------------------------------------------------------------------------");
+            if (status.equalsIgnoreCase("pegawai")) {
+                for (int i = 0; i < counterData; i++) {
+                    if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
+                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
+                                data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
+                                data[5][i]);
+                    }
+                }
+            } else if (status.equalsIgnoreCase("admin")) {
+                for (int i = 0; i < counterData; i++) {
+                    if (data[2][i].equalsIgnoreCase(data[2][0])) {
+                        System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
+                                data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
+                                data[5][i]);
+                    }
+                }
+            } else {
+                for (int i = 0; i < counterData; i++) {
                     System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
                             data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
                             data[5][i]);
                 }
             }
-        } else if (status.equalsIgnoreCase("admin")) {
-            for (int i = 0; i < counterData; i++) {
-                if (data[2][i].equalsIgnoreCase(data[2][0])) {
-                    System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
-                            data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
-                            data[5][i]);
-                }
+        }else{
+            System.out.println(
+                    "-----------------------------------------------");
+            System.out.printf("| %-20s | %-20s | %n", "Role", "Gaji Pokok");
+            System.out.println(
+                    "-----------------------------------------------");
+            for (int i = 0; i < counterGaji; i++) {
+                System.out.printf("| %-20s | %-20d | %n", role[i], gajiPokok[i]);
             }
-        } else {
-            for (int i = 0; i < counterData; i++) {
-                System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
-                        data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
-                        data[5][i]);
-            }
+            System.out.println(
+                    "-----------------------------------------------");
         }
     }
 
