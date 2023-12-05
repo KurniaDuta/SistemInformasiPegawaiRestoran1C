@@ -331,11 +331,9 @@ public class PenggajianPegawaiV2 {
                             case 3:
                                 // Delete Data
                                 tabelListData("allData");
-                                System.out.print("Masukkan ID yang ingin dihapus: ");
-                                String idDelete = sc.nextLine();
-                                found = false;
+                                searchID();
                                 for (int i = 0; i < counterData; i++) {
-                                    if (data[0][i].toLowerCase().contains(idDelete.toLowerCase())) {
+                                    if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         for (int j = i; j < counterData - 1; j++) {
                                             data[0][j] = data[0][j + 1];
                                             data[1][j] = data[1][j + 1];
@@ -365,12 +363,10 @@ public class PenggajianPegawaiV2 {
                                 break;
                             case 4:
                                 tabelListData("allData");
-                                System.out.print("Masukkan ID yang ingin diedit: ");
-                                String idUpdate = sc.nextLine();
-                                found = false;
+                                searchID();
                                 int columnToEdit;
                                 for (int i = 0; i < counterData; i++) {
-                                    if (data[0][i].toLowerCase().contains(idUpdate.toLowerCase())) {
+                                    if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         edited = true;
                                         do {
                                             System.out.println(
@@ -431,11 +427,9 @@ public class PenggajianPegawaiV2 {
                                 break;
                             case 5:
                                 tabelListData("allData");
-                                System.out.println("Masukkan ID yang ingin digaji: ");
-                                String idGaji = sc.nextLine();
-                                found = false;
+                                searchID();
                                 for (int i = 0; i < counterData; i++) {
-                                    if (data[0][i].toLowerCase().contains(idGaji.toLowerCase())) {
+                                    if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         int indexToPay = i;
                                         do {
                                             System.out.print("Masukkan Jumlah Izin: ");
@@ -460,11 +454,9 @@ public class PenggajianPegawaiV2 {
                                 break;
                             case 6:
                                 tabelListData("allData");
-                                System.out.println("Masukkan ID yang ingin slip gaji dicetak: ");
-                                String idSlip = sc.nextLine();
-                                found = false;
+                                searchID();
                                 for (int i = 0; i < counterData; i++) {
-                                    if (data[0][i].toLowerCase().contains(idSlip.toLowerCase())) {
+                                    if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         int indexToPrint = i;
                                         System.out.println("\n========== SLIP GAJI ==========");
                                         System.out.println("ID Karyawan: " + data[0][indexToPrint]);
@@ -633,6 +625,16 @@ public class PenggajianPegawaiV2 {
                         data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
                         data[5][i]);
             }
+        }
+    }
+
+    static void searchID() {
+        System.out.println("Masukkan ID yang ingin dieksekusi: ");
+        idSearch = sc.nextLine();
+        found = false;
+
+        if (found) {
+            System.out.println("Data tidak ditemukan!");
         }
     }
 }
