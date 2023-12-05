@@ -123,7 +123,7 @@ public class PenggajianPegawaiV2 {
 
             switch (choiceLogin) {
                 case 1:
-                    login();
+                    userIndex = login();
                     break;
                 case 2:
                     System.out.println("Terima Kasih");
@@ -481,7 +481,7 @@ public class PenggajianPegawaiV2 {
             System.out.print("Masukkan username: ");
             String username = sc.nextLine();
             System.out.print("Masukkan password: ");
-                        String password = new String(System.console().readPassword());
+            String password = new String(System.console().readPassword());
 
             for (int i = 0; i < usernames.length; i++) {
                 if (username.equals(usernames[i]) && password.equals(passwords[i])) {
@@ -507,6 +507,7 @@ public class PenggajianPegawaiV2 {
         }
         return userIndex;
     }
+
     static void tabelListData(String status) {
         if (status.equals("pegawai") || status.equals("admin") || status.equals("allData")) {
             System.out.println(
@@ -553,6 +554,7 @@ public class PenggajianPegawaiV2 {
                     "-----------------------------------------------");
         }
     }
+
     static int tambahData(String status, int counter) {
         counter++;
         if (status.equalsIgnoreCase("pegawai") || status.equalsIgnoreCase("admin")) {
