@@ -343,13 +343,9 @@ public class PenggajianPegawaiV2 {
                                             data[5][j] = data[5][j + 1];
                                             data[6][j] = data[6][j + 1];
                                         }
-                                        data[0][counterData - 1] = null;
-                                        data[1][counterData - 1] = null;
-                                        data[2][counterData - 1] = null;
-                                        data[3][counterData - 1] = null;
-                                        data[4][counterData - 1] = null;
-                                        data[5][counterData - 1] = null;
-                                        data[6][counterData - 1] = null;
+                                        for (int j = i; j < counterData; j++) {
+                                            data[j][counterData - 1] = null;
+                                        }
                                         counterData--;
                                         System.out.println("Pegawai berhasil dihapus.");
                                         found = true;
