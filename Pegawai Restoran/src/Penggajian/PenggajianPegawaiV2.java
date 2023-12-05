@@ -123,39 +123,7 @@ public class PenggajianPegawaiV2 {
 
             switch (choiceLogin) {
                 case 1:
-                    for (int attempt = 1; attempt <= 3; attempt++) {
-                        // Login
-                        System.out.print("Masukkan username: ");
-                        String username = sc.nextLine();
-                        System.out.print("Masukkan password: ");
-                        String password = new String(System.console().readPassword());
-
-                        // Check Login
-                        boolean validCredentials = false;
-                        for (int i = 0; i < usernames.length; i++) {
-                            if (username.equals(usernames[i]) && password.equals(passwords[i])) {
-                                validCredentials = true;
-                                userIndex = i;
-                                break;
-                            }
-                        }
-
-                        if (validCredentials) {
-                            break;
-                        } else {
-                            System.out.println("==========================================");
-                            System.out.println("= Login Gagal. " + (3 - attempt) + " kali percobaan lagi =");
-                            System.out.println("==========================================");
-                            if (attempt == 3) {
-                                System.out.println("==========================================");
-                                System.out.println("= Maximum percobaan login telah tercapai. =");
-                                System.out.println("=     Silahkan coba lagi nanti            =");
-                                System.out.println("==========================================");
-                                break;
-                            }
-                        }
-
-                    }
+                    login();
                     break;
                 case 2:
                     System.out.println("Terima Kasih");
@@ -507,6 +475,38 @@ public class PenggajianPegawaiV2 {
 
     }
 
+    static int login() {
+        int userIndex = -1;
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            System.out.print("Masukkan username: ");
+            String username = sc.nextLine();
+            System.out.print("Masukkan password: ");
+                        String password = new String(System.console().readPassword());
+
+            for (int i = 0; i < usernames.length; i++) {
+                if (username.equals(usernames[i]) && password.equals(passwords[i])) {
+                    userIndex = i;
+                    break;
+                }
+            }
+
+            if (userIndex != -1) {
+                break;
+            } else {
+                System.out.println("==========================================");
+                System.out.println("= Login Gagal. " + (3 - attempt) + " kali percobaan lagi =");
+                System.out.println("==========================================");
+                if (attempt == 3) {
+                    System.out.println("==========================================");
+                    System.out.println("= Maximum percobaan login telah tercapai. =");
+                    System.out.println("=     Silahkan coba lagi nanti            =");
+                    System.out.println("==========================================");
+                    break;
+                }
+            }
+        }
+        return userIndex;
+    }
     static void tabelListData(String status) {
         if (status.equals("pegawai") || status.equals("admin") || status.equals("allData")) {
             System.out.println(
@@ -553,7 +553,6 @@ public class PenggajianPegawaiV2 {
                     "-----------------------------------------------");
         }
     }
-
     static int tambahData(String status, int counter) {
         counter++;
         if (status.equalsIgnoreCase("pegawai") || status.equalsIgnoreCase("admin")) {
