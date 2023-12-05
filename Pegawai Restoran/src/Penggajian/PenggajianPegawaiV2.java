@@ -457,17 +457,7 @@ public class PenggajianPegawaiV2 {
                                 searchID();
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
-                                        int indexToPrint = i;
-                                        System.out.println("\n========== SLIP GAJI ==========");
-                                        System.out.println("ID Karyawan: " + data[0][indexToPrint]);
-                                        System.out.println("Nama Karyawan: " + data[1][indexToPrint]);
-                                        System.out.println("===============================");
-                                        System.out.println("Gaji Pokok: Rp" + gajiPokok[indexToPrint]);
-                                        System.out.println("Lembur: Rp" + (lembur[indexToPrint] * 50000));
-                                        System.out.println("Potongan: Rp" + (izin[indexToPrint] * 50000));
-                                        System.out.println("===============================");
-                                        System.out.println("Total Gaji: Rp" + totalGaji[indexToPrint]);
-                                        System.out.println("========== TERIMA KASIH =========");
+                                        slipGaji(i);
                                         found = true;
                                     }
                                 }
@@ -559,16 +549,7 @@ public class PenggajianPegawaiV2 {
                                 } while (!edited);
                                 break;
                             case 3:
-                                System.out.println("\n========== SLIP GAJI ==========");
-                                System.out.println("ID Karyawan: " + data[0][userIndex]);
-                                System.out.println("Nama Karyawan: " + data[1][userIndex]);
-                                System.out.println("===============================");
-                                System.out.println("Gaji Pokok: Rp" + gajiPokok[userIndex]);
-                                System.out.println("Lembur: Rp" + (lembur[userIndex] * 50000));
-                                System.out.println("Potongan: Rp" + (izin[userIndex] * 50000));
-                                System.out.println("===============================");
-                                System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
-                                System.out.println("========== TERIMA KASIH ==========");
+                                slipGaji(userIndex);
                                 break;
                             case 4:
                                 System.out.println("Logging out...");
@@ -636,5 +617,18 @@ public class PenggajianPegawaiV2 {
         if (found) {
             System.out.println("Data tidak ditemukan!");
         }
+    }
+
+    static void slipGaji(int userIndex) {
+        System.out.println("\n========== SLIP GAJI ==========");
+        System.out.println("ID Karyawan: " + data[0][userIndex]);
+        System.out.println("Nama Karyawan: " + data[1][userIndex]);
+        System.out.println("===============================");
+        System.out.println("Gaji Pokok: Rp" + gajiPokok[userIndex]);
+        System.out.println("Lembur: Rp" + (lembur[userIndex] * 50000));
+        System.out.println("Potongan: Rp" + (izin[userIndex] * 50000));
+        System.out.println("===============================");
+        System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
+        System.out.println("========== TERIMA KASIH ==========");
     }
 }
