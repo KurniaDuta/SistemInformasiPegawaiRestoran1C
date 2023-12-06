@@ -9,6 +9,7 @@ public class PenggajianPegawaiV2 {
     static String[][] data = new String[7][10];
     static String[] role = new String[10];
     static int[] gajiPokok = new int[10];
+    static int[] gajiRole = new int[10];
     static double[] totalGaji = new double[10]; // total gaji
     static int[] izin = new int[10]; // Izin
     static int[] lembur = new int[10]; // Lembur
@@ -101,14 +102,21 @@ public class PenggajianPegawaiV2 {
         role[3] = "Waiter";
         role[4] = "Receptionist";
 
-        // Gaji Pokok
-        gajiPokok[0] = 5_000_000;
-        gajiPokok[1] = 4_000_000;
-        gajiPokok[2] = 3_000_000;
-        gajiPokok[3] = 3_000_000;
-        gajiPokok[4] = 3_000_000;
     }
 
+    static {
+        gajiPokok[0] = gajiRole[0];
+        gajiPokok[1] = gajiRole[1];
+        gajiPokok[2] = gajiRole[2];
+        gajiPokok[3] = gajiRole[2];
+        gajiPokok[4] = gajiRole[2];
+
+        gajiRole[0] = 5_000_000;
+        gajiRole[1] = 4_000_000;
+        gajiRole[2] = 3_000_000;
+        gajiRole[3] = 3_000_000;
+        gajiRole[4] = 3_000_000;
+    }
     public static void main(String[] args) {
         do {
             System.out.println("==========================================");
@@ -578,7 +586,7 @@ public class PenggajianPegawaiV2 {
             for (int i = 0; i < role.length; i++) {
                 if (role[i].toLowerCase()
                         .contains(data[2][counterData].toLowerCase())) {
-                    gajiPokok[counterData] = gajiPokok[i];
+                    gajiPokok[counterData] = gajiRole[i];
                     break;
                 }
             }
@@ -598,7 +606,7 @@ public class PenggajianPegawaiV2 {
             System.out.print("Role: ");
             role[counterGaji] = sc.nextLine();
             System.out.print("Gaji Pokok: ");
-            gajiPokok[counterGaji] = sc.nextInt();
+            gajiRole[counterGaji] = sc.nextInt();
             sc.nextLine();
         }
         return counter;
