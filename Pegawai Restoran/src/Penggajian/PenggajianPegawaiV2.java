@@ -520,7 +520,7 @@ public class PenggajianPegawaiV2 {
                     "--------------------------------------------------------------------------------------------------------------------------");
             if (status.equalsIgnoreCase("pegawai")) {
                 for (int i = 0; i < counterData; i++) {
-                    if (!(data[2][i].equalsIgnoreCase(data[2][0]))) {
+                    if (!(data[2][i].equalsIgnoreCase(role[0]))) {
                         System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
                                 data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
                                 data[5][i]);
@@ -528,7 +528,7 @@ public class PenggajianPegawaiV2 {
                 }
             } else if (status.equalsIgnoreCase("admin")) {
                 for (int i = 0; i < counterData; i++) {
-                    if (data[2][i].equalsIgnoreCase(data[2][0])) {
+                    if (data[2][i].equalsIgnoreCase(role[0])) {
                         System.out.printf("%-5s | %-20s | %-15s | %-15s | %-10s | %-18s | %-30s%n",
                                 data[0][i], data[1][i], data[6][i], data[2][i], data[3][i], data[4][i],
                                 data[5][i]);
