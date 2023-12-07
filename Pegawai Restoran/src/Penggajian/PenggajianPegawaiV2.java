@@ -111,8 +111,8 @@ public class PenggajianPegawaiV2 {
         gajiPokok[0] = gajiRole[0];
         gajiPokok[1] = gajiRole[1];
         gajiPokok[2] = gajiRole[2];
-        gajiPokok[3] = gajiRole[2];
-        gajiPokok[4] = gajiRole[2];
+        gajiPokok[3] = gajiRole[3];
+        gajiPokok[4] = gajiRole[4];
 
         gajiRole[0] = 5_000_000;
         gajiRole[1] = 4_000_000;
@@ -129,8 +129,8 @@ public class PenggajianPegawaiV2 {
         tunjanganRole[0] = tunjanganMakan[0];
         tunjanganRole[1] = tunjanganMakan[1];
         tunjanganRole[2] = tunjanganMakan[2];
-        tunjanganRole[2] = tunjanganMakan[2];
-        tunjanganRole[2] = tunjanganMakan[2];        
+        tunjanganRole[3] = tunjanganMakan[3];
+        tunjanganRole[4] = tunjanganMakan[4];        
     }
 
     public static void main(String[] args) {
