@@ -10,6 +10,8 @@ public class PenggajianPegawaiV2 {
     static String[] role = new String[10];
     static int[] gajiPokok = new int[10];
     static int[] gajiRole = new int[10];
+    static int[] tunjanganMakan = new int[10];
+    static int[] gajiKotor = new int[10];
     static double[] totalGaji = new double[10]; // total gaji
     static int[] izin = new int[10]; // Izin
     static int[] lembur = new int[10]; // Lembur
@@ -76,7 +78,7 @@ public class PenggajianPegawaiV2 {
 
         // Medical History
         data[4][0] = "-";
-        data[4][1] = "Kesleo";
+        data[4][1] = "-";
         data[4][2] = "-";
         data[4][3] = "-";
         data[4][4] = "-";
@@ -116,6 +118,12 @@ public class PenggajianPegawaiV2 {
         gajiRole[2] = 3_000_000;
         gajiRole[3] = 3_000_000;
         gajiRole[4] = 3_000_000;
+
+        tunjanganMakan[0] = gajiRole[0] * 25 / 100;
+        tunjanganMakan[1] = gajiRole[1] * 25 / 100;
+        tunjanganMakan[2] = gajiRole[2] * 25 / 100;
+        tunjanganMakan[3] = gajiRole[3] * 25 / 100;
+        tunjanganMakan[4] = gajiRole[4] * 25 / 100;
     }
 
     public static void main(String[] args) {
@@ -340,19 +348,30 @@ public class PenggajianPegawaiV2 {
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         int indexToPay = i;
-                                        do {
+                                        do { // Izin
                                             System.out.print("Masukkan Jumlah Izin: ");
                                             izin[indexToPay] = sc.nextInt();
-                                            if (izin[indexToPay] < 0 || izin[indexToPay] > 31) {
+                                            if (izin[indexToPay] < 0 || izin[indexToPay] > 26) {
                                                 System.out.println("Mohon Masukkan Jumlah Izin yang Benar!");
                                             }
-                                        } while (izin[indexToPay] < 0 || izin[indexToPay] > 31);
-                                        System.out.print("Masukkan Jumlah Lembur: ");
-                                        lembur[indexToPay] = sc.nextInt();
+                                        } while (izin[indexToPay] < 0 || izin[indexToPay] > 26);
 
-                                        totalGaji[indexToPay] = (int) gajiRole[indexToPay]
-                                                + (lembur[indexToPay] * 50000)
-                                                - (izin[indexToPay] * 50000);
+                                        do { // Lembur
+                                            System.out.print("Masukkan Jumlah Lembur: ");
+                                            lembur[indexToPay] = sc.nextInt();
+                                            if (lembur[indexToPay] < 0 || lembur[indexToPay] > 4) {
+                                                System.out.println("Batasan lembur hanya mulai dari 0-4!");
+                                            }
+                                        } while (lembur[indexToPay] < 0 || lembur[indexToPay] > 4);
+
+                                        // tunjanganMakan[indexToPay] = gajiRole[indexToPay] * (25 / 100);
+
+                                        gajiKotor[indexToPay] = (int) gajiRole[indexToPay] + tunjanganMakan[indexToPay]
+                                                + (lembur[indexToPay] * 150000);
+
+                                        totalGaji[indexToPay] = (int) gajiRole[indexToPay] + tunjanganMakan[indexToPay]
+                                                + (lembur[indexToPay] * 150000)
+                                                - (izin[indexToPay] * 75000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
                                         found = true;
                                     }
@@ -628,8 +647,12 @@ public class PenggajianPegawaiV2 {
         System.out.println("Nama Karyawan: " + data[1][userIndex]);
         System.out.println("===============================");
         System.out.println("Gaji Pokok: Rp" + gajiRole[userIndex]);
-        System.out.println("Lembur: Rp" + (lembur[userIndex] * 50000));
-        System.out.println("Potongan: Rp" + (izin[userIndex] * 50000));
+        System.out.println("Tunjangan Makan: Rp" + tunjanganMakan[userIndex]);
+        System.out.println("Lembur: Rp" + (lembur[userIndex] * 150000));
+        System.out.println();
+        System.out.println("Gaji Kotor: Rp" + gajiKotor[userIndex]);
+        System.out.println("===============================");
+        System.out.println("Potongan: Rp" + (izin[userIndex] * 75000));
         System.out.println("===============================");
         System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
         System.out.println("========== TERIMA KASIH ==========");
