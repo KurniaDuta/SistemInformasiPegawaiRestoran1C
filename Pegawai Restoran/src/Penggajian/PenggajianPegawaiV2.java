@@ -10,6 +10,7 @@ public class PenggajianPegawaiV2 {
     static String[] role = new String[10];
     static int[] gajiPokok = new int[10];
     static int[] gajiRole = new int[10];
+    static int[] tunjanganRole = new int[10];
     static int[] tunjanganMakan = new int[10];
     static int[] gajiKotor = new int[10];
     static double[] totalGaji = new double[10]; // total gaji
@@ -124,6 +125,12 @@ public class PenggajianPegawaiV2 {
         tunjanganMakan[2] = gajiRole[2] * 25 / 100;
         tunjanganMakan[3] = gajiRole[3] * 25 / 100;
         tunjanganMakan[4] = gajiRole[4] * 25 / 100;
+
+        tunjanganRole[0] = tunjanganMakan[0];
+        tunjanganRole[1] = tunjanganMakan[1];
+        tunjanganRole[2] = tunjanganMakan[2];
+        tunjanganRole[2] = tunjanganMakan[2];
+        tunjanganRole[2] = tunjanganMakan[2];        
     }
 
     public static void main(String[] args) {
@@ -364,12 +371,10 @@ public class PenggajianPegawaiV2 {
                                             }
                                         } while (lembur[indexToPay] < 0 || lembur[indexToPay] > 4);
 
-                                        // tunjanganMakan[indexToPay] = gajiRole[indexToPay] * (25 / 100);
-
-                                        gajiKotor[indexToPay] = (int) gajiRole[indexToPay] + tunjanganMakan[indexToPay]
+                                        gajiKotor[indexToPay] = (int) gajiRole[indexToPay] + tunjanganRole[indexToPay]
                                                 + (lembur[indexToPay] * 150000);
 
-                                        totalGaji[indexToPay] = (int) gajiRole[indexToPay] + tunjanganMakan[indexToPay]
+                                        totalGaji[indexToPay] = (int) gajiRole[indexToPay] + tunjanganRole[indexToPay]
                                                 + (lembur[indexToPay] * 150000)
                                                 - (izin[indexToPay] * 75000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
@@ -599,6 +604,7 @@ public class PenggajianPegawaiV2 {
                 for (int i = 0; i < role.length; i++) {
                     if (role[i].toLowerCase().contains(data[2][counterData].toLowerCase())) {
                         gajiPokok[counterData] = gajiRole[i];
+                        tunjanganMakan[counterData] = tunjanganRole[i];
                         break;
                     }
                 }
@@ -647,7 +653,7 @@ public class PenggajianPegawaiV2 {
         System.out.println("Nama Karyawan: " + data[1][userIndex]);
         System.out.println("===============================");
         System.out.println("Gaji Pokok: Rp" + gajiRole[userIndex]);
-        System.out.println("Tunjangan Makan: Rp" + tunjanganMakan[userIndex]);
+        System.out.println("Tunjangan Makan: Rp" + tunjanganRole[userIndex]);
         System.out.println("Lembur: Rp" + (lembur[userIndex] * 150000));
         System.out.println();
         System.out.println("Gaji Kotor: Rp" + gajiKotor[userIndex]);
