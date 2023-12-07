@@ -117,6 +117,7 @@ public class PenggajianPegawaiV2 {
         gajiRole[3] = 3_000_000;
         gajiRole[4] = 3_000_000;
     }
+
     public static void main(String[] args) {
         do {
             System.out.println("==========================================");
@@ -349,7 +350,7 @@ public class PenggajianPegawaiV2 {
                                         System.out.print("Masukkan Jumlah Lembur: ");
                                         lembur[indexToPay] = sc.nextInt();
 
-                                        totalGaji[indexToPay] = (int) gajiPokok[indexToPay]
+                                        totalGaji[indexToPay] = (int) gajiRole[indexToPay]
                                                 + (lembur[indexToPay] * 50000)
                                                 - (izin[indexToPay] * 50000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
@@ -556,7 +557,7 @@ public class PenggajianPegawaiV2 {
             System.out.println(
                     "-----------------------------------------------");
             for (int i = 0; i < counterGaji; i++) {
-                System.out.printf("| %-20s | %-20d | %n", role[i], gajiPokok[i]);
+                System.out.printf("| %-20s | %-20d | %n", role[i], gajiRole[i]);
             }
             System.out.println(
                     "-----------------------------------------------");
@@ -576,20 +577,19 @@ public class PenggajianPegawaiV2 {
                 }
                 System.out.print("): ");
                 data[2][counterData] = sc.nextLine();
+                for (int i = 0; i < role.length; i++) {
+                    if (role[i].toLowerCase().contains(data[2][counterData].toLowerCase())) {
+                        gajiPokok[counterData] = gajiRole[i];
+                        break;
+                    }
+                }
             } else {
                 data[2][counterData] = data[2][0];
+                gajiPokok[counterData] = gajiRole[0];
             }
 
             System.out.print("Nama Lengkap: ");
             data[1][counterData] = sc.nextLine();
-
-            for (int i = 0; i < role.length; i++) {
-                if (role[i].toLowerCase()
-                        .contains(data[2][counterData].toLowerCase())) {
-                    gajiPokok[counterData] = gajiRole[i];
-                    break;
-                }
-            }
             System.out.print("Nomor Telepon: ");
             data[6][counterData] = sc.nextLine();
             System.out.print("Domisili: ");
@@ -627,7 +627,7 @@ public class PenggajianPegawaiV2 {
         System.out.println("ID Karyawan: " + data[0][userIndex]);
         System.out.println("Nama Karyawan: " + data[1][userIndex]);
         System.out.println("===============================");
-        System.out.println("Gaji Pokok: Rp" + gajiPokok[userIndex]);
+        System.out.println("Gaji Pokok: Rp" + gajiRole[userIndex]);
         System.out.println("Lembur: Rp" + (lembur[userIndex] * 50000));
         System.out.println("Potongan: Rp" + (izin[userIndex] * 50000));
         System.out.println("===============================");
