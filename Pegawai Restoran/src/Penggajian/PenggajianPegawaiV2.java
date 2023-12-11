@@ -119,18 +119,7 @@ public class PenggajianPegawaiV2 {
         gajiRole[2] = 3_000_000;
         gajiRole[3] = 3_000_000;
         gajiRole[4] = 3_000_000;
-
-        tunjanganMakan[0] = gajiRole[0] * 25 / 100;
-        tunjanganMakan[1] = gajiRole[1] * 25 / 100;
-        tunjanganMakan[2] = gajiRole[2] * 25 / 100;
-        tunjanganMakan[3] = gajiRole[3] * 25 / 100;
-        tunjanganMakan[4] = gajiRole[4] * 25 / 100;
-
-        tunjanganRole[0] = tunjanganMakan[0];
-        tunjanganRole[1] = tunjanganMakan[1];
-        tunjanganRole[2] = tunjanganMakan[2];
-        tunjanganRole[3] = tunjanganMakan[3];
-        tunjanganRole[4] = tunjanganMakan[4];        
+ 
     }
 
     public static void main(String[] args) {
@@ -370,6 +359,7 @@ public class PenggajianPegawaiV2 {
                                                 System.out.println("Batasan lembur hanya mulai dari 0-4!");
                                             }
                                         } while (lembur[indexToPay] < 0 || lembur[indexToPay] > 4);
+                                        tunjanganRole[indexToPay] = gajiRole[indexToPay] * 25/100;
 
                                         gajiKotor[indexToPay] = (int) gajiRole[indexToPay] + tunjanganRole[indexToPay]
                                                 + (lembur[indexToPay] * 150000);
