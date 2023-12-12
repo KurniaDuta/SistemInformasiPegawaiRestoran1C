@@ -276,8 +276,8 @@ public class PenggajianPegawaiV2 {
                                 int columnToEdit;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
-                                        edited = true;
                                         do {
+                                            edited = true;
                                             System.out.println(
                                                     "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
                                             System.out.println("==========================================");
@@ -316,16 +316,7 @@ public class PenggajianPegawaiV2 {
                                                     data[5][i] = sc.nextLine();
                                                     break;
                                                 default:
-                                                    System.out.println("Pilihan menu tidak valid!");
-                                                    System.out.println("Apakah anda ingin mengedit ulang? (y/n)");
-                                                    System.out.print("--> ");
-                                                    char edit = sc.next().charAt(0);
-                                                    if (edit == 'y' || edit == 'Y') {
-                                                        edited = false;
-                                                    } else {
-                                                        edited = true;
-                                                        continue;
-                                                    }
+                                                    pilihanTidakValid();
                                                     break;
                                             }
                                             if (columnToEdit > 0 && columnToEdit <= 5) {
@@ -442,26 +433,16 @@ public class PenggajianPegawaiV2 {
                                         case 1:
                                             System.out.println("Masukkan Domisili baru: ");
                                             data[3][userIndex] = sc.nextLine();
+                                            System.out.println("Data Berhasil diedit");
                                             break;
                                         case 2:
                                             System.out.println("Masukkan Nomor Telepon baru: ");
                                             data[6][userIndex] = sc.nextLine();
+                                            System.out.println("Data Berhasil diedit");
                                             break;
                                         default:
-                                            System.out.println("Pilihan tidak valid");
-                                            System.out.println("Apakah anda ingin mengedit ulang? (y/n)");
-                                            System.out.print("--> ");
-                                            char edit = sc.next().charAt(0);
-                                            if (edit == 'y' || edit == 'Y') {
-                                                edited = false;
-                                            } else {
-                                                edited = true;
-                                                continue;
-                                            }
+                                            pilihanTidakValid();
                                             break;
-                                    }
-                                    if (edited) {
-                                        System.out.println("Data Berhasil Di edit");
                                     }
                                 } while (!edited);
                                 break;
@@ -629,6 +610,18 @@ public class PenggajianPegawaiV2 {
     static void searchfalse() {
         if (!found) {
             System.out.println("Data tidak ditemukan!");
+        }
+    }
+
+    static void pilihanTidakValid() {
+        System.out.println("Pilihan tidak valid");
+        System.out.println("Apakah anda ingin mengedit ulang? (y/n)");
+        System.out.print("--> ");
+        char edit = sc.next().charAt(0);
+        if (edit == 'y' || edit == 'Y') {
+            edited = false;
+        } else {
+            edited = true;
         }
     }
 
