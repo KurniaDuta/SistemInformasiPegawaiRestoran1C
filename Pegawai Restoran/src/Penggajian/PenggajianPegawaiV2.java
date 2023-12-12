@@ -107,17 +107,17 @@ public class PenggajianPegawaiV2 {
     }
 
     static {
-        gajiPokok[0] = gajiRole[0];
-        gajiPokok[1] = gajiRole[1];
-        gajiPokok[2] = gajiRole[2];
-        gajiPokok[3] = gajiRole[3];
-        gajiPokok[4] = gajiRole[4];
-
         gajiRole[0] = 5_000_000;
         gajiRole[1] = 4_000_000;
         gajiRole[2] = 3_000_000;
         gajiRole[3] = 3_000_000;
         gajiRole[4] = 3_000_000;
+
+        gajiPokok[0] = gajiRole[0];
+        gajiPokok[1] = gajiRole[1];
+        gajiPokok[2] = gajiRole[2];
+        gajiPokok[3] = gajiRole[3];
+        gajiPokok[4] = gajiRole[4];
 
     }
 
@@ -297,6 +297,11 @@ public class PenggajianPegawaiV2 {
                                                     }
                                                     System.out.print("): ");
                                                     data[2][i] = sc.nextLine();
+                                                    for (int j = 0; j < gajiRole.length; j++) {
+                                                        if (data[2][i].equalsIgnoreCase(role[j])) {
+                                                            gajiPokok[i] = gajiRole[j];
+                                                        }
+                                                    }
                                                     break;
                                                 case 3:
                                                     System.out.print("Domisili: ");
@@ -620,12 +625,12 @@ public class PenggajianPegawaiV2 {
         idSearch = sc.nextLine();
         found = false;
     }
+
     static void searchfalse() {
         if (!found) {
             System.out.println("Data tidak ditemukan!");
         }
     }
-
 
     static void slipGaji(int userIndex) {
         System.out.println("\n========== SLIP GAJI ==========");
