@@ -268,10 +268,7 @@ public class PenggajianPegawaiV2 {
                                         break;
                                     }
                                 }
-
-                                if (!found) {
-                                    System.out.println("Data tidak ditemukan.");
-                                }
+                                searchfalse();
                                 break;
                             case 4:
                                 tabelListData("allData");
@@ -333,9 +330,7 @@ public class PenggajianPegawaiV2 {
                                         } while (!edited);
                                     }
                                 }
-                                if (!found) {
-                                    System.out.println("Data tidak ditemukan.");
-                                }
+                                searchfalse();
                                 break;
                             case 5:
                                 tabelListData("allData");
@@ -363,16 +358,13 @@ public class PenggajianPegawaiV2 {
                                         gajiKotor[indexToPay] = (int) gajiPokok[indexToPay] + tunjanganMakan[indexToPay]
                                                 + (lembur[indexToPay] * 150000);
 
-                                        totalGaji[indexToPay] = (int) gajiPokok[indexToPay] + tunjanganMakan[indexToPay]
-                                                + (lembur[indexToPay] * 150000)
+                                        totalGaji[indexToPay] = (int) gajiKotor[indexToPay]
                                                 - (izin[indexToPay] * 75000);
                                         System.out.println("Total Gaji: " + totalGaji[indexToPay]);
                                         found = true;
                                     }
                                 }
-                                if (!found) {
-                                    System.out.println("Data tidak ditemukan!");
-                                }
+                                searchfalse();
                                 break;
                             case 6:
                                 tabelListData("allData");
@@ -383,9 +375,7 @@ public class PenggajianPegawaiV2 {
                                         found = true;
                                     }
                                 }
-                                if (!found) {
-                                    System.out.println("Data tidak ditemukan!");
-                                }
+                                searchfalse();
                                 break;
                             case 7:
                                 System.out.println(
@@ -629,11 +619,13 @@ public class PenggajianPegawaiV2 {
         System.out.println("Masukkan ID yang ingin dieksekusi: ");
         idSearch = sc.nextLine();
         found = false;
-
-        if (found) {
+    }
+    static void searchfalse() {
+        if (!found) {
             System.out.println("Data tidak ditemukan!");
         }
     }
+
 
     static void slipGaji(int userIndex) {
         System.out.println("\n========== SLIP GAJI ==========");
