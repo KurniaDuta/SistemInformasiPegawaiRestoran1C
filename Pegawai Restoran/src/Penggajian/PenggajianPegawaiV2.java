@@ -175,7 +175,7 @@ public class PenggajianPegawaiV2 {
 
             if (userIndex != -1) {
                 do {
-                    if (data[2][userIndex].equals(data[2][0])) {
+                    if (data[2][userIndex].equals(role[0])) {
                         System.out.println("\nSelamat Datang " + data[1][userIndex]);
                         System.out.println("Pilih Menu:");
                         for (int i = 0; i < menuAdmin.length; i++) {
@@ -273,12 +273,20 @@ public class PenggajianPegawaiV2 {
                                 // Delete Data
                                 tabelListData("allData");
                                 searchID();
+                                boolean deletedAccount = false;
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
                                         if (idSearch.toLowerCase().contains("a") && counterAdmin <= 1) {
                                             System.out.println(
                                                     "Batas minimum admin telah tercapai.\nData tidak dapat dihapus");
                                             found = true;
+                                            break;
+                                        }
+                                        if (data[0][i] == data[0][userIndex]) {
+                                            System.out.println("Anda telah keluar dari akun admin.");
+                                            System.out.println("Logging out...");
+                                            found = true;
+                                            deletedAccount = true;
                                             break;
                                         }
                                         for (int j = i; j < counterData - 1; j++) {
@@ -307,6 +315,11 @@ public class PenggajianPegawaiV2 {
                                         found = true;
                                         break;
                                     }
+                                }
+                                if (deletedAccount) {
+                                    userIndex = -1;
+                                    freezeTerminal();
+                                    clearTerminal();
                                 }
                                 searchfalse();
                                 break;
@@ -660,7 +673,7 @@ public class PenggajianPegawaiV2 {
                     }
                 }
             } else {
-                data[2][counterData] = data[2][0];
+                data[2][counterData] = role[0];
                 gajiPokok[counterData] = gajiRole[0];
             }
 
