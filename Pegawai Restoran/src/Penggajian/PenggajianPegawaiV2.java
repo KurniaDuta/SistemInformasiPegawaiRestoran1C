@@ -598,7 +598,7 @@ public class PenggajianPegawaiV2 {
                     System.out.println("= Maximum percobaan login telah tercapai. =");
                     System.out.println("=     Silahkan coba lagi nanti            =");
                     System.out.println("==========================================");
-                    break;
+                    System.exit(0);
                 }
             }
         }
