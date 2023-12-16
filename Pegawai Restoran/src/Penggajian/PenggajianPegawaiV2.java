@@ -282,9 +282,13 @@ public class PenggajianPegawaiV2 {
                                             data[4][j] = data[4][j + 1];
                                             data[5][j] = data[5][j + 1];
                                             data[6][j] = data[6][j + 1];
+                                            usernames[j] = usernames[j + 1];
+                                            passwords[j] = passwords[j + 1]; 
                                         }
                                         for (int j = i; j < counterData; j++) {
                                             data[j][counterData - 1] = null;
+                                            usernames[counterData - 1] = null;
+                                            passwords[counterData - 1] = null;
                                         }
                                         counterData--;
                                         System.out.println("Pegawai berhasil dihapus.");
@@ -517,7 +521,6 @@ public class PenggajianPegawaiV2 {
                     }
 
                     if (userIndex != -1) {
-                        System.out.println("==========================================");
                         System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
                         back = sc.next().charAt(0);
                     }
@@ -697,6 +700,6 @@ public class PenggajianPegawaiV2 {
         System.out.println("Potongan: Rp" + (izin[userIndex] * 75000));
         System.out.println("===============================");
         System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
-        System.out.println("========== TERIMA KASIH ==========");
+        System.out.println("======== TERIMA  KASIH ========");
     }
 }
