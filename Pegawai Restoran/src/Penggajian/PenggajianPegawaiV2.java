@@ -16,13 +16,14 @@ public class PenggajianPegawaiV2 {
     static double[] totalGaji = new double[10]; // total gaji
     static int[] izin = new int[10]; // Izin
     static int[] lembur = new int[10]; // Lembur
+    static double[][] riwayatGaji = new double[10][4];
 
     // Menu
     static String[] menuLogin = { "Login", "Exit" };
     static String[] menuAdmin = { "List Data", "Tambah Data", "Hapus Data Pegawai",
-            "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Laporan Pegawai", "Logout" };
+            "Edit Data Pegawai", "Penggajian Pegawai", "Cetak Slip Gaji", "Laporan Pegawai", "Riwayat Gaji", "Logout" };
     static String[] menuListData = { "Data Pegawai", "Data Admin", "Data Role & Gaji Pokok" };
-    static String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Logout" };
+    static String[] menuPegawai = { "Profil", "Edit Data Pegawai", "Slip Gaji", "Riwayat Gaji", "Logout" };
     static String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
 
     // Data
@@ -120,6 +121,28 @@ public class PenggajianPegawaiV2 {
         gajiPokok[3] = gajiRole[3];
         gajiPokok[4] = gajiRole[4];
 
+    }
+
+    static {
+        riwayatGaji[0][0] = 6_250_000; // admin
+        riwayatGaji[0][1] = 6_550_000;
+        riwayatGaji[0][2] = 6_775_000;
+
+        riwayatGaji[1][0] = 5_800_000; // duta
+        riwayatGaji[1][1] = 5_075_000;
+        riwayatGaji[1][2] = 4_775_000;
+
+        riwayatGaji[2][0] = 3_825_000; // gayuh
+        riwayatGaji[2][1] = 3_300_000;
+        riwayatGaji[2][2] = 4_050_000;
+
+        riwayatGaji[3][0] = 4_050_000; // pram
+        riwayatGaji[3][1] = 3_750_000;
+        riwayatGaji[3][2] = 3_975_000;
+
+        riwayatGaji[4][0] = 3_825_000; // rensi
+        riwayatGaji[4][1] = 3_825_000;
+        riwayatGaji[4][2] = 4_500_000;
     }
 
     public static void main(String[] args) {
@@ -352,8 +375,8 @@ public class PenggajianPegawaiV2 {
                                         } while (lembur[indexToPay] < 0 || lembur[indexToPay] > 4);
                                         tunjanganMakan[indexToPay] = gajiPokok[indexToPay] * 25 / 100;
 
-                                        if (izin[indexToPay] == 0 && lembur[indexToPay] == 4){
-                                            bonus[indexToPay] = gajiPokok[indexToPay] * 5/100;
+                                        if (izin[indexToPay] == 0 && lembur[indexToPay] == 4) {
+                                            bonus[indexToPay] = gajiPokok[indexToPay] * 5 / 100;
                                         } else {
                                             bonus[indexToPay] = 0;
                                         }
@@ -393,6 +416,19 @@ public class PenggajianPegawaiV2 {
                                 }
                                 break;
                             case 8:
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------");
+                                System.out.printf("%-5s | %-20s | %-13s | %-13s | %-13s | %-13s |%n", "ID",
+                                        "Nama Lengkap", "September", "Oktober", "November", "Desember");
+                                System.out.println(
+                                        "---------------------------------------------------------------------------------------------");
+                                for (int i = 0; i < counterData; i++) {
+                                    System.out.printf("%-5s | %-20s | %-13s | %-13s | %-13s | %-13s |%n", data[0][i],
+                                            data[1][i], riwayatGaji[i][0], riwayatGaji[i][1], riwayatGaji[i][2],
+                                            totalGaji[i]);
+                                }
+                                break;
+                            case 9:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
                                 break;
@@ -457,6 +493,20 @@ public class PenggajianPegawaiV2 {
                                 slipGaji(userIndex);
                                 break;
                             case 4:
+                                System.out.println("ID Pegawai: " + data[0][userIndex]);
+                                System.out.println("Nama Pegawai: " + data[1][userIndex]);
+                                System.out.println(
+                                        "----------------------------------------------------------------");
+                                System.out.printf("| %-13s | %-13s | %-13s | %-13s |%n", "September", "Oktober",
+                                        "November", "Desember");
+                                System.out.println(
+                                        "---------------------------------------------------------------");
+                                System.out.printf("| %-13s | %-13s | %-13s | %-13s |%n", riwayatGaji[userIndex][0],
+                                        riwayatGaji[userIndex][1], riwayatGaji[userIndex][2], totalGaji[userIndex]);
+                                System.out.println(
+                                        "----------------------------------------------------------------");
+                                break;
+                            case 5:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
                                 break;
