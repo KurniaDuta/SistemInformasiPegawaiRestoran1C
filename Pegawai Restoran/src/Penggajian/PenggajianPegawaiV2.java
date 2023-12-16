@@ -157,6 +157,7 @@ public class PenggajianPegawaiV2 {
             System.out.print("--> ");
             choiceLogin = sc.nextInt();
             sc.nextLine();
+            clearTerminal();
 
             switch (choiceLogin) {
                 case 1:
@@ -175,7 +176,7 @@ public class PenggajianPegawaiV2 {
             if (userIndex != -1) {
                 do {
                     if (data[2][userIndex].equals(data[2][0])) {
-                        System.out.println("Selamat Datang " + data[1][userIndex]);
+                        System.out.println("\nSelamat Datang " + data[1][userIndex]);
                         System.out.println("Pilih Menu:");
                         for (int i = 0; i < menuAdmin.length; i++) {
                             System.out.println((i + 1) + ". " + menuAdmin[i]);
@@ -183,35 +184,30 @@ public class PenggajianPegawaiV2 {
                         System.out.print("--> ");
                         choice = sc.nextInt();
                         sc.nextLine();
+                        clearTerminal();
 
                         switch (choice) {
                             case 1:
-                                System.out.println("==========================================");
-                                System.out.println("                LIST DATA                 ");
-                                System.out.println("==========================================");
+                                System.out.println("List Data: ");
                                 for (int i = 0; i < menuListData.length; i++) {
                                     System.out.println((i + 1) + ". " + menuListData[i]);
                                 }
                                 System.out.print("--> ");
                                 choiceListData = sc.nextInt();
                                 sc.nextLine();
+                                clearTerminal();
+
                                 switch (choiceListData) {
                                     case 1:
-                                        System.out.println("==========================================");
-                                        System.out.println("               DATA PEGAWAI               ");
-                                        System.out.println("==========================================");
+                                        System.out.println();
                                         tabelListData("pegawai");
                                         break;
                                     case 2:
-                                        System.out.println("==========================================");
-                                        System.out.println("                DATA ADMIN                ");
-                                        System.out.println("==========================================");
+                                        System.out.println();
                                         tabelListData("admin");
                                         break;
                                     case 3:
-                                        System.out.println("==========================================");
-                                        System.out.println("             Data Role & Gaji Pokok       ");
-                                        System.out.println("==========================================");
+                                        System.out.println();
                                         tabelListData("role");
                                         break;
 
@@ -230,6 +226,8 @@ public class PenggajianPegawaiV2 {
                                 System.out.print("--> ");
                                 choiceListData = sc.nextInt();
                                 sc.nextLine();
+                                clearTerminal();
+
                                 switch (choiceListData) {
                                     case 1:
                                         System.out.println("==========================================");
@@ -322,8 +320,7 @@ public class PenggajianPegawaiV2 {
                                             edited = true;
                                             System.out.println(
                                                     "1. Nama Lengkap\n2. Role\n3. Domisili\n4. Riwayat Penyakit\n5. Riwayat Pendidikan");
-                                            System.out.println("==========================================");
-                                            System.out.print("Pilih kolom yang akan diedit(1-5): ");
+                                            System.out.print("--> ");
                                             columnToEdit = sc.nextInt();
                                             sc.nextLine(); // Membersihkan newline
                                             switch (columnToEdit) {
@@ -454,6 +451,9 @@ public class PenggajianPegawaiV2 {
                             case 9:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
+                                freezeTerminal();
+                                clearTerminal();
+
                                 break;
                             default:
                                 System.out.println("Pilihan Tidak Valid");
@@ -468,6 +468,8 @@ public class PenggajianPegawaiV2 {
                         System.out.print("--> ");
                         choice = sc.nextInt();
                         sc.nextLine();
+                        clearTerminal();
+
                         switch (choice) {
                             case 1:
                                 System.out.println("ID Pegawai\t\t: " + data[0][userIndex]);
@@ -532,6 +534,9 @@ public class PenggajianPegawaiV2 {
                             case 5:
                                 System.out.println("Logging out...");
                                 userIndex = -1;
+                                freezeTerminal();
+                                clearTerminal();
+
                                 break;
                             default:
                                 System.out.println("Pilihan Tidak Valid");
@@ -541,7 +546,9 @@ public class PenggajianPegawaiV2 {
 
                     if (userIndex != -1) {
                         System.out.println("Apakah anda ingin kembali ke menu? (y/n)");
+                        System.out.print("--> ");
                         back = sc.next().charAt(0);
+                        clearTerminal();
                     }
                 } while ((back == 'y' || back == 'Y') && userIndex != -1);
             } else {
@@ -582,6 +589,7 @@ public class PenggajianPegawaiV2 {
                 }
             }
         }
+        clearTerminal();
         return userIndex;
     }
 
@@ -682,6 +690,7 @@ public class PenggajianPegawaiV2 {
 
     static void searchID() {
         System.out.println("Masukkan ID yang ingin dieksekusi: ");
+        System.out.print("--> ");
         idSearch = sc.nextLine();
         found = false;
     }
@@ -724,5 +733,18 @@ public class PenggajianPegawaiV2 {
         System.out.println("===============================");
         System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
         System.out.println("======== TERIMA  KASIH ========");
+    }
+
+    static void clearTerminal() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    static void freezeTerminal() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
