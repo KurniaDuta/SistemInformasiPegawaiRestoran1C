@@ -706,12 +706,16 @@ public class PenggajianPegawaiV2 {
         System.out.println("===============================");
         System.out.println("Gaji Pokok: Rp" + gajiPokok[userIndex]);
         System.out.println("Tunjangan Makan: Rp" + tunjanganMakan[userIndex]);
-        System.out.println("Lembur: Rp" + (lembur[userIndex] * 150000));
+        System.out.println("Lembur: " + lembur[userIndex] + " hari");
+        System.out.println("Lembur : " + lembur[userIndex] + " hari x Rp150000 = Rp" + (lembur[userIndex] * 150000));
         System.out.println("Bonus: Rp" + bonus[userIndex]);
         System.out.println();
         System.out.println("Gaji Kotor: Rp" + gajiKotor[userIndex]);
         System.out.println("===============================");
-        System.out.println("Potongan: Rp" + (izin[userIndex] * 75000));
+        System.out.println("Rincian Potongan: ");
+        System.out.println("Izin: " + izin[userIndex] + " hari");
+        System.out.println("Potongan : " + izin[userIndex] + " hari x Rp75000 = Rp" + (izin[userIndex] * 75000));
+        System.out.println("Total Potongan: Rp" + (izin[userIndex] * 75000));
         System.out.println("===============================");
         System.out.println("Total Gaji: Rp" + totalGaji[userIndex]);
         System.out.println("======== TERIMA  KASIH ========");
