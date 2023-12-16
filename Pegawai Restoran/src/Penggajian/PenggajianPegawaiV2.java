@@ -27,7 +27,8 @@ public class PenggajianPegawaiV2 {
     static String[] menueditPegawai = { "Domisili", "Nomor Telepon" };
 
     // Data
-    static int counterData = 5, counterPegawai = 4, counterAdmin = 1, counterGaji = 5;
+    static int counterData = 5, counterIDPegawai = 4, counterIDAdmin = 1, counterGaji = 5, counterPegawai = 4,
+            counterAdmin = 1;
 
     // Variabels
     static int userIndex = -1, choiceLogin, choice, choiceListData, ChoiceEditPegawai;
@@ -235,7 +236,8 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("               DATA PEGAWAI               ");
                                         System.out.println("==========================================");
                                         if (counterData < data[0].length) {
-                                            counterPegawai = tambahData("pegawai", counterPegawai);
+                                            counterIDPegawai++;
+                                            counterPegawai = tambahData("pegawai", counterPegawai, counterIDPegawai);
                                             counterData++;
                                         } else {
                                             System.out.println("Batas maksimum pegawai telah tercapai.");
@@ -246,7 +248,8 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("                DATA ADMIN                ");
                                         System.out.println("==========================================");
                                         if (counterData < data[0].length) {
-                                            counterAdmin = tambahData("admin", counterAdmin);
+                                            counterIDAdmin++;
+                                            counterAdmin = tambahData("admin", counterAdmin, counterIDAdmin);
                                             counterData++;
                                         } else {
                                             System.out.println("Batas maksimum admin telah tercapai.");
@@ -257,7 +260,7 @@ public class PenggajianPegawaiV2 {
                                         System.out.println("             Data Role & Gaji Pokok       ");
                                         System.out.println("==========================================");
                                         if (counterGaji < role.length) {
-                                            tambahData("role", counterGaji);
+                                            tambahData("role", counterGaji, 0);
                                             counterGaji++;
                                         } else {
                                             System.out.println("Batas maksimum role telah tercapai.");
@@ -274,6 +277,12 @@ public class PenggajianPegawaiV2 {
                                 searchID();
                                 for (int i = 0; i < counterData; i++) {
                                     if (data[0][i].toLowerCase().contains(idSearch.toLowerCase())) {
+                                        if (idSearch.toLowerCase().contains("a") && counterAdmin <= 1) {
+                                            System.out.println(
+                                                    "Batas minimum admin telah tercapai.\nData tidak dapat dihapus");
+                                            found = true;
+                                            break;
+                                        }
                                         for (int j = i; j < counterData - 1; j++) {
                                             data[0][j] = data[0][j + 1];
                                             data[1][j] = data[1][j + 1];
@@ -283,12 +292,17 @@ public class PenggajianPegawaiV2 {
                                             data[5][j] = data[5][j + 1];
                                             data[6][j] = data[6][j + 1];
                                             usernames[j] = usernames[j + 1];
-                                            passwords[j] = passwords[j + 1]; 
+                                            passwords[j] = passwords[j + 1];
                                         }
                                         for (int j = i; j < counterData; j++) {
                                             data[j][counterData - 1] = null;
                                             usernames[counterData - 1] = null;
                                             passwords[counterData - 1] = null;
+                                        }
+                                        if (idSearch.toLowerCase().contains("a")) {
+                                            counterAdmin--;
+                                        } else if (idSearch.toLowerCase().contains("p")) {
+                                            counterPegawai--;
                                         }
                                         counterData--;
                                         System.out.println("Pegawai berhasil dihapus.");
@@ -613,10 +627,10 @@ public class PenggajianPegawaiV2 {
         }
     }
 
-    static int tambahData(String status, int counter) {
+    static int tambahData(String status, int counter, int counterID) {
         counter++;
         if (status.equalsIgnoreCase("pegawai") || status.equalsIgnoreCase("admin")) {
-            data[0][counterData] = (status.equalsIgnoreCase("pegawai")) ? "P10" + counter : "A10" + counter;
+            data[0][counterData] = (status.equalsIgnoreCase("pegawai")) ? "P10" + counterID : "A10" + counterID;
             System.out.println((status.equalsIgnoreCase("pegawai")) ? "ID Pegawai: " + data[0][counterData]
                     : "ID Admin: " + data[0][counterData]);
             if (status.equalsIgnoreCase("pegawai")) {
