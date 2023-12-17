@@ -342,6 +342,11 @@ public class PenggajianPegawaiV2 {
                                                     data[1][i] = sc.nextLine();
                                                     break;
                                                 case 2:
+                                                    if (totalGaji[i] != 0) {
+                                                        System.out.println("Tidak dapat mengganti role untuk bulan ini, karena gaji telah dibayarkan");
+                                                        edited = false;
+                                                        break;
+                                                    } 
                                                     System.out.print("Role (");
                                                     for (int j = 1; j < counterGaji; j++) {
                                                         System.out.print(
@@ -371,7 +376,7 @@ public class PenggajianPegawaiV2 {
                                                     pilihanTidakValid();
                                                     break;
                                             }
-                                            if (columnToEdit > 0 && columnToEdit <= 5) {
+                                            if (columnToEdit > 0 && columnToEdit <= 5 && edited) {
                                                 System.out.println("Data berhasil diedit!");
                                             }
                                             found = true;
